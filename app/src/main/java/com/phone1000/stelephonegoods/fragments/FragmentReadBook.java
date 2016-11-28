@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.phone1000.stelephonegoods.R;
+import com.phone1000.stelephonegoods.constant.ReadUrl;
+import com.zhy.http.okhttp.OkHttpUtils;
 
 /**
  * Created by my on 2016/11/28.
@@ -17,6 +19,9 @@ public class FragmentReadBook extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.fragment_readbook_layout, container,false);
+//        OkHttpUtils.get()
+//                .url(ReadUrl.READ_URL)
+//                .
         return layout;
     }
 
