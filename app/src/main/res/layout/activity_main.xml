@@ -28,16 +28,20 @@
             android:layout_weight="1"
             android:button="@null"
             android:text="首页"
-            android:drawableTop="@mipmap/ic_launcher"
+            android:gravity="center"
+            android:checked="true"
+            android:drawableTop="@drawable/navigation_homepage_selector"
             />
         <RadioButton
             android:id="@+id/main_rg_rb_readbooks"
             android:layout_width="0dp"
             android:layout_height="@dimen/activity_main_radiogroup_height"
             android:layout_weight="1"
+
             android:button="@null"
+            android:gravity="center"
             android:text="读物"
-            android:drawableTop="@mipmap/ic_launcher"
+            android:drawableTop="@drawable/navigation_readbook_selector"
             />
         <RadioButton
             android:id="@+id/main_rg_rb_superback"
@@ -45,17 +49,19 @@
             android:layout_height="@dimen/activity_main_radiogroup_height"
             android:layout_weight="1"
             android:button="@null"
+            android:gravity="center"
             android:text="超级返"
-            android:drawableTop="@mipmap/ic_launcher"
+            android:drawableTop="@drawable/navigation_superback_selector"
             />
         <RadioButton
             android:id="@+id/main_rg_rb_mine"
             android:layout_width="0dp"
             android:layout_height="@dimen/activity_main_radiogroup_height"
             android:layout_weight="1"
+            android:gravity="center"
             android:button="@null"
             android:text="我的"
-            android:drawableTop="@mipmap/ic_launcher"
+            android:drawableTop="@drawable/navigation_mine_selector"
             />
     </RadioGroup>
 </LinearLayout>
