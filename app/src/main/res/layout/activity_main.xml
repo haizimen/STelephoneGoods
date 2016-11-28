@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.phone1000.stelephonegoods.MainActivity">
+<FrameLayout
+    android:id="@+id/main_framelayout"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+</FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#666"/>
+    <RadioGroup
+        android:id="@+id/main_radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_main_radiogroup_height"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/main_rg_rb_homepage"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/activity_main_radiogroup_height"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="首页"
+            android:drawableTop="@mipmap/ic_launcher"
+            />
+        <RadioButton
+            android:id="@+id/main_rg_rb_readbooks"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/activity_main_radiogroup_height"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="读物"
+            android:drawableTop="@mipmap/ic_launcher"
+            />
+        <RadioButton
+            android:id="@+id/main_rg_rb_superback"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/activity_main_radiogroup_height"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="超级返"
+            android:drawableTop="@mipmap/ic_launcher"
+            />
+        <RadioButton
+            android:id="@+id/main_rg_rb_mine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/activity_main_radiogroup_height"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="我的"
+            android:drawableTop="@mipmap/ic_launcher"
+            />
+    </RadioGroup>
+</LinearLayout>
