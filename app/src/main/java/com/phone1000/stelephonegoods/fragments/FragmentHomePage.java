@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.phone1000.stelephonegoods.BaseFragment;
@@ -16,6 +17,8 @@ import com.phone1000.stelephonegoods.R;
 import com.phone1000.stelephonegoods.adapters.HomeTitleAdapter;
 import com.phone1000.stelephonegoods.constant.ReadUrl;
 import com.phone1000.stelephonegoods.model.HomeTitle;
+import com.phone1000.stelephonegoods.model.LogoModel;
+import com.squareup.picasso.Picasso;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -33,6 +36,7 @@ public class FragmentHomePage extends BaseFragment {
     private TabLayout mTab;
     private HomeTitleAdapter adapter;
     private List<HomeTitle.BodyBean.PageViewsBean> titles;
+    private ImageView mImg;
 
     @Nullable
     @Override
@@ -44,8 +48,30 @@ public class FragmentHomePage extends BaseFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        mImg = ((ImageView) layout.findViewById(R.id.floatbutton));
+        getImg();
         getTitles();
 
+    }
+
+    private void getImg() {
+        OkHttpUtils.get()
+                .url(ReadUrl.HANDPICKLOGO)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+
+                    }
+
+                    @Override
+                    public void onResponse(String response, int id) {
+                        Gson gson = new Gson();
+                        LogoModel logoModel = gson.fromJson(response, LogoModel.class);
+                        String thumbnailUrl = logoModel.getBody().getHandle().getThumbnailUrl();
+                        Picasso.with(mImg.getContext()).load(thumbnailUrl).into(mImg);
+                    }
+                });
     }
 
     private List<Fragment> getFragments() {
