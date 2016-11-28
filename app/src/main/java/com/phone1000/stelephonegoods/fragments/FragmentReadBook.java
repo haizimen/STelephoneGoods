@@ -1,28 +1,120 @@
 package com.phone1000.stelephonegoods.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonToken;
 import com.phone1000.stelephonegoods.R;
+import com.phone1000.stelephonegoods.activities.ReadDetailActivity;
+import com.phone1000.stelephonegoods.adapters.ReadListAdapter;
 import com.phone1000.stelephonegoods.constant.ReadUrl;
-import com.zhy.http.okhttp.OkHttpUtils;
+import com.phone1000.stelephonegoods.model.ReadListContent;
+
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by my on 2016/11/28.
  */
-public class FragmentReadBook extends Fragment {
+public class FragmentReadBook extends Fragment implements AdapterView.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
+    private String TAG=FragmentReadBook.class.getSimpleName();
+    private View layout;
+    private ListView mListView;
+    private ReadListAdapter adapter;
+    private SwipeRefreshLayout refreshLayout;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.fragment_readbook_layout, container,false);
-//        OkHttpUtils.get()
-//                .url(ReadUrl.READ_URL)
-//                .
+        layout = inflater.inflate(R.layout.fragment_readbook_layout, container, false);
         return layout;
+
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initView();
+        setupData(true);
+    }
+
+    private void setupData(boolean isUpdate) {
+        try {
+            JSONObject jsonObject = new JSONObject(ReadUrl.jsonStr);
+            JSONArray data = jsonObject.getJSONArray("data");
+            Type type = new TypeToken<List<ReadListContent>>() {
+            }.getType();
+            Gson gson = new Gson();
+            List<ReadListContent> list=gson.fromJson(data.toString(),type);
+            for (int i = 0; i < list.size(); i++) {
+                if (i%3==0) {
+                    list.get(i).setType(0);
+                }else{
+                    list.get(i).setType(1);
+                }
+            }
+            if (isUpdate) {
+                adapter.updateRes(list);
+            }else{
+                adapter.addRes(list);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void initView() {
+        mListView = (ListView) layout.findViewById(R.id.fragment_read_listview);
+        refreshLayout = (SwipeRefreshLayout) layout.findViewById(R.id.fragment_read_refresh);
+        adapter = new ReadListAdapter(getContext(),null, R.layout.fragment_read_layout_zero,R.layout.fragment_read_layout_one);
+        mListView.setAdapter(adapter);
+        refreshLayout.setOnRefreshListener(this);
+        refreshLayout.setColorSchemeResources(R.color.colorAccent);
+        mListView.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        ReadListContent item = adapter.getItem(position);
+        Intent intent = new Intent(getContext(), ReadDetailActivity.class);
+        intent.putExtra("url",item.getContent());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                refreshLayout.setRefreshing(false);
+                setupData(true);
+            }
+        },2000);
+    }
 }

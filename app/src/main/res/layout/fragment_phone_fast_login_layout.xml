@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_edittext_height"
+        android:background="#fff"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/login_phonefast_edittext_phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:background="@null"
+            android:drawableLeft="@mipmap/phone"
+            android:hint="   手机号码"
+            android:maxLength="11"
+            android:paddingLeft="10dp" />
+
+        <Button
+            android:id="@+id/login_phonefast_checkbox"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:background="@drawable/login_send_identifycode_btn"
+            android:button="@null"
+            android:enabled="false"
+            android:gravity="center_vertical|left"
+
+            android:text="发送验证码"
+            android:textColor="@drawable/login_send_identifycode_btntext_color" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eee" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_edittext_height"
+        android:background="#fff"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:layout_marginTop="5dp"
+            android:id="@+id/login_phonefast_edittext_identifycode"
+            android:layout_width="0dp"
+
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@null"
+            android:drawableLeft="@mipmap/identyfingcode"
+            android:hint="   验证码"
+            android:maxLength="11"
+            android:paddingLeft="10dp" />
+
+        <CheckBox
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:background="@drawable/login_send_identifycode_btn"
+            android:button="@null"
+            android:checked="false"
+            android:gravity="center"
+            android:text="发送验证码"
+            android:textColor="@drawable/login_send_identifycode_btntext_color"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <TextView
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@mipmap/small_flag"
+        android:text="未注册的手机将自动创建为小象用户" />
+
+    <Button
+        android:id="@+id/login_phonefast_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_button_bg_selector"
+        android:enabled="false"
+        android:text="登陆"
+        android:textSize="19sp" />
+</LinearLayout>
