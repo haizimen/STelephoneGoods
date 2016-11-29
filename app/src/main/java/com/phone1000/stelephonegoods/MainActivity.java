@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
@@ -18,6 +19,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private FrameLayout mFrameLayout;
     private RadioGroup mRadioGroup;
     private Fragment currentFragment;
+    private float downX;
+    private float downY;
+    private float upX;
+    private float upY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,4 +72,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         }
         transaction.commit();
     }
+
+
 }
