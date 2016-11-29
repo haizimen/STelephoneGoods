@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.phone1000.stelephonegoods.custormView.CustormViewPager
+        android:id="@+id/handpick_pager"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"></com.phone1000.stelephonegoods.custormView.CustormViewPager>
+
+    <LinearLayout
+        android:id="@+id/handpick_point"
+        android:layout_width="75dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@id/handpick_pager"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" />
+
+    <ImageView
+        android:id="@+id/handpick_hot"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/handpick_pager"
+        android:src="@mipmap/ic_launcher" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/handpick_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/handpick_hot" />
+</RelativeLayout>
