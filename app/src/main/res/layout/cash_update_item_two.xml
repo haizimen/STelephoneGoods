@@ -16,20 +16,20 @@
             android:layout_height="60dp"
             android:background="#fff"
             android:textSize="30sp"
-            android:text="实名认证"
+            android:text="芝麻信用授权"
             android:gravity="center"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="210dp"
-            android:src="@mipmap/icon_authentification"/>
+            android:src="@mipmap/icon_seaame_authorize"/>
         <TextView
-            android:id="@+id/cash_update_item_one_btn"
+            android:id="@+id/cash_update_item_two_btn"
             android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="立即认证"
+            android:text="立即授权"
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="#fff"
