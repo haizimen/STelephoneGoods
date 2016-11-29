@@ -20,7 +20,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.ReadDetailActivity" />
-        <activity android:name=".activities.LoginActivity"></activity>
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.CertificationActivity" />
+        <activity android:name=".activities.CashUpdateActivity" />
+        <activity android:name=".activities.OrderActivity" />
+        <activity android:name=".activities.MinePayActivity" />
+        <activity android:name=".activities.AccountActivity" />
+        <activity android:name=".activities.RecieverAddressActivity" />
+        <activity android:name=".activities.CommenProblemActivity" />
+        <activity android:name=".activities.SettingsActivity"></activity>
     </application>
 
 </manifest>
