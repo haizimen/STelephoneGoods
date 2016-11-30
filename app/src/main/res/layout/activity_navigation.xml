@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.phone1000.stelephonegoods.activities.NavigationActivity">
+
+    <RelativeLayout
+        android:id="@+id/navigation_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fff">
+
+        <ImageView
+            android:id="@+id/navigation_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:padding="13dp"
+            android:src="@mipmap/back_bar" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="50dp"
+            android:padding="10dp"
+            android:src="@mipmap/home_img_signature" />
+
+        <ImageView
+            android:id="@+id/navigation_cart"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:src="@mipmap/nav_icon_shopping_red_nol" />
+    </RelativeLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/navigation_linear">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="255dp"
+            android:background="#fff">
+            <ImageView
+                android:id="@+id/navigation_header"
+                android:layout_width="match_parent"
+                android:layout_height="255dp"
+                android:layout_below="@id/navigation_linear"
+                android:src="@mipmap/ic_launcher"
+                app:layout_scrollFlags="scroll" />
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/navigation_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</RelativeLayout>
