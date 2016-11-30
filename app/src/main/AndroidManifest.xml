@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
     <application
         android:name=".SElephant"
         android:allowBackup="true"
@@ -28,9 +28,7 @@
         <activity android:name=".activities.AccountActivity" />
         <activity android:name=".activities.RecieverAddressActivity" />
         <activity android:name=".activities.CommenProblemActivity" />
-        <activity android:name=".activities.SettingsActivity" />
-        <activity android:name=".activities.AboutUsActivity" />
-        <activity android:name=".activities.UserProtocolActivity"></activity>
+        <activity android:name=".activities.SettingsActivity"></activity>
     </application>
 
 </manifest>

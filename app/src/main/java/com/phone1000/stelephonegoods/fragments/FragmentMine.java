@@ -59,7 +59,7 @@ public class FragmentMine extends Fragment implements View.OnClickListener {
             RadioButton viewById = (RadioButton) getActivity().findViewById(R.id.main_rg_rb_homepage);
             viewById.setChecked(true);
         }
-        initView();
+//        initView();
     }
 
     private void initView() {

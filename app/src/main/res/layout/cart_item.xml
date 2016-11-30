@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp">
+
+    <ImageView
+        android:id="@+id/cart_img"
+        android:layout_width="90dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/cart_img"
+        android:layout_marginLeft="4dp"
+        android:layout_toRightOf="@id/cart_img"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/cart_add"
+        android:layout_width="30dp"
+        android:layout_height="24dp"
+        android:layout_alignBottom="@id/cart_img"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:background="#fff"
+        android:text="+"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/cart_count"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_alignTop="@id/cart_add"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/cart_add"
+        android:gravity="center"
+        android:text="1" />
+
+    <Button
+        android:id="@+id/cart_subtract"
+        android:layout_width="30dp"
+        android:layout_height="24dp"
+        android:layout_alignBottom="@id/cart_img"
+        android:layout_toLeftOf="@id/cart_count"
+        android:background="#fff"
+        android:text="-"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/cart_old_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/cart_subtract"
+        android:layout_toRightOf="@id/cart_img"
+        android:text="@string/app_name" />
+
+    <View
+        android:id="@+id/cart_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/cart_img"
+        android:layout_marginTop="8dp"
+        android:background="#dcdbdb" />
+
+    <TextView
+        android:id="@+id/cart_new_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cart_view"
+        android:layout_marginTop="10dp"
+        android:text="@string/app_name"
+        android:textColor="#f9139d" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/cart_view"
+        android:layout_marginTop="10dp"
+        android:background="#f9139d"
+        android:text="去结算"
+        android:textColor="#fff" />
+
+</RelativeLayout>

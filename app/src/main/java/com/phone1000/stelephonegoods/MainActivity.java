@@ -5,12 +5,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.phone1000.stelephonegoods.activities.LoginActivity;
 import com.phone1000.stelephonegoods.fragments.FragmentHomePage;
 import com.phone1000.stelephonegoods.fragments.FragmentMine;
 import com.phone1000.stelephonegoods.fragments.FragmentReadBook;
@@ -21,6 +19,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private FrameLayout mFrameLayout;
     private RadioGroup mRadioGroup;
     private Fragment currentFragment;
+    private float downX;
+    private float downY;
+    private float upX;
+    private float upY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         FragmentTransaction transaction = manager.beginTransaction();
         currentFragment = new FragmentHomePage();
         transaction.add(R.id.main_framelayout, currentFragment);
-        LoginActivity loginActivity = new LoginActivity();
         transaction.commit();
     }
 
@@ -71,5 +72,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         }
         transaction.commit();
     }
+
 
 }
