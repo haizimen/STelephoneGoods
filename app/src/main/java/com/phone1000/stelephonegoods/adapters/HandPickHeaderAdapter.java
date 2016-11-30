@@ -43,4 +43,5 @@ public class HandPickHeaderAdapter extends PagerAdapter {
         container.removeView(imgs.get(position));
     }
 
+
 }

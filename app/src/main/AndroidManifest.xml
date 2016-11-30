@@ -28,7 +28,10 @@
         <activity android:name=".activities.AccountActivity" />
         <activity android:name=".activities.RecieverAddressActivity" />
         <activity android:name=".activities.CommenProblemActivity" />
-        <activity android:name=".activities.SettingsActivity"></activity>
+        <activity android:name=".activities.SettingsActivity" />
+        <activity android:name=".activities.MovieActivity" />
+        <activity android:name=".activities.NavigationActivity" />
+        <activity android:name=".activities.CartActivity"></activity>
     </application>
 
 </manifest>

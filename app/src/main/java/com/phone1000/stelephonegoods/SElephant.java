@@ -8,7 +8,8 @@ import org.xutils.x;
  * Created by my on 2016/11/28.
  */
 public class SElephant extends Application {
-    public static boolean isLogin=false;
+    public static boolean isLogin = false;
+
     @Override
     public void onCreate() {
         super.onCreate();

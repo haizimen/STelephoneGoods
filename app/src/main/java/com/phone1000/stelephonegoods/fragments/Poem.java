@@ -48,7 +48,7 @@ public class Poem extends BaseFragment implements SwipeRefreshLayout.OnRefreshLi
     private void setupView() {
         OkHttpUtils.post()
                 .url(ReadUrl.HANDPICKURL)
-                .addParams("titleId", "12")
+                .addParams("titleId", "14")
                 .addParams("isHome", "0")
                 .build()
                 .execute(new StringCallback() {

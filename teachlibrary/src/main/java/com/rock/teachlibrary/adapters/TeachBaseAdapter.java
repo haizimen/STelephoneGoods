@@ -19,7 +19,7 @@ public abstract class TeachBaseAdapter<T> extends BaseAdapter {
 
     public List<T> data;
 
-    public LayoutInflater inflater;
+    private LayoutInflater inflater;
 
     private int layoutResId;
 
@@ -80,7 +80,6 @@ public abstract class TeachBaseAdapter<T> extends BaseAdapter {
     }
 
     protected abstract void bindData(ViewHolder holder, T item, int position);
-
 
     public static class ViewHolder {
         View itemView;

@@ -14,9 +14,11 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TabHost;
 
 import com.google.gson.Gson;
 import com.phone1000.stelephonegoods.BaseFragment;
@@ -27,6 +29,7 @@ import com.phone1000.stelephonegoods.adapters.HandPickRecyclerAdapter;
 import com.phone1000.stelephonegoods.constant.ReadUrl;
 import com.phone1000.stelephonegoods.custormView.CustormViewPager;
 import com.phone1000.stelephonegoods.model.HandpickModel;
+import com.phone1000.stelephonegoods.utils.MySwipeRefreshLayout;
 import com.squareup.picasso.Picasso;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -52,7 +55,6 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
     private RecyclerView mRecycler;
     private LinearLayout mLinear;
     private int i = 0;
-    private int j = 0;
     private HandPickHeaderAdapter adapterPager;
     private HandPickHeaderAdapter handPickHeaderAdapter;
     private List<ImageView> imgs;
@@ -72,6 +74,10 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
         }
     };
     private HandPickRecyclerAdapter adapterRecycler;
+    private float downX;
+    private float downY;
+    private float upX;
+    private float upY;
 
     @Nullable
     @Override
@@ -87,8 +93,10 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
         super.onActivityCreated(savedInstanceState);
         inflater = LayoutInflater.from(getContext());
         mList = ((ListView) layout.findViewById(R.id.handpick_list));
-        mRefresh = ((SwipeRefreshLayout) layout.findViewById(R.id.handpick_refresh));
+        mRefresh = ((MySwipeRefreshLayout) layout.findViewById(R.id.handpick_refresh));
         adapter = new HandPickListAdapter(getContext(), null, R.layout.handpick_item);
+        mRefresh.setDistanceToTriggerSync(15);
+        mRefresh.setColorSchemeColors(getResources().getColor(R.color.colorAccent));
         mRefresh.setOnRefreshListener(this);
         mList.setAdapter(adapter);
         view = inflater.inflate(R.layout.handpick_hand, null, false);
@@ -98,13 +106,13 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mRecycler.setLayoutManager(manager);
-        adapterRecycler = new HandPickRecyclerAdapter(getContext(),null);
+        adapterRecycler = new HandPickRecyclerAdapter(getContext(), null);
         mRecycler.setAdapter(adapterRecycler);
+        adapterRecycler.onAttachedToRecyclerView(mRecycler);
         mLinear = ((LinearLayout) view.findViewById(R.id.handpick_point));
         getImg();
         mList.addHeaderView(view);
         setupView();
-
     }
 
 
@@ -181,17 +189,16 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
 
                             @Override
                             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-
-                            }
-
-                            @Override
-                            public void onPageSelected(int position) {
                                 ImageView childAt = (ImageView) mLinear.getChildAt(position);
                                 childAt.setImageResource(R.mipmap.point_select);
                                 ((ImageView) mLinear.getChildAt(i)).setImageResource(R.mipmap.point);
                                 i = position;
                                 Log.e("NMB", "onPageScrolled: " + i);
+                            }
+
+                            @Override
+                            public void onPageSelected(int position) {
+
                             }
 
                             @Override
@@ -230,5 +237,6 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
         setupView();
         mRefresh.setRefreshing(false);
     }
+
 
 }

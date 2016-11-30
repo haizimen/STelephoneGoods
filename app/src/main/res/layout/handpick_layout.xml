@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <com.phone1000.stelephonegoods.utils.MySwipeRefreshLayout
         android:id="@+id/handpick_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -13,5 +13,5 @@
             android:id="@+id/handpick_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </com.phone1000.stelephonegoods.utils.MySwipeRefreshLayout>
 </LinearLayout>
