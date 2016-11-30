@@ -234,6 +234,7 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
                     flag =false;
                 }else {
                     mLinreaHintOpen.setVisibility(View.GONE);
+
                     flag =true;
                 }
                 break;
