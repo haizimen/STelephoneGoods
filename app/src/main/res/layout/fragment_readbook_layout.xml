@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#fff"
     android:layout_height="match_parent">
-<TextView
+<LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="读物"/>
+    android:orientation="vertical"
+    android:layout_height="@dimen/fragment_read_title_hieght">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/fragment_read_title_hieght"
+        android:text="读物"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#fff"
+        android:layout_gravity="center"/>
+</LinearLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/fragment_read_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/fragment_read_listview"
+            android:layout_width="match_parent"
+            android:background="#eee"
+            android:layout_height="match_parent"></ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 </LinearLayout>

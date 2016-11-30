@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="340dp">
+
+    <ImageView
+        android:id="@+id/usual_img"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/navigation_favorable"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@id/usual_img"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/linear_bg"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="#e64b9c"
+        android:textSize="10sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/usual_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/usual_img"
+        android:gravity="center"
+        android:text="@string/app_name" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/usual_title">
+
+        <TextView
+            android:id="@+id/usul_price"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right|center_vertical"
+            android:text="@string/app_name"
+            android:textColor="#f43397" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="4dp"
+            android:text="x12期"
+            android:textSize="10sp" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.phone1000.stelephonegoods.activities.CashUpdateActivity">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/cashupdate_back"
+            android:layout_width="30dp"
+            android:src="@mipmap/login_back"
+            android:layout_height="30dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="额度提升"
+            android:textColor="#000"
+            android:paddingRight="25dp"
+            android:textSize="20sp"
+            android:gravity="center"/>
+    </LinearLayout>
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:text="实名认证并授权最高可获得信用额度"
+       android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="10,000.00"
+        android:textSize="25sp"
+        android:textColor="@color/colorAccent"
+        android:gravity="center"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/cashupdate_viewpager"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="60dp"
+            android:layout_height="match_parent">
+
+        </android.support.v4.view.ViewPager>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/crashupdate_tablayout"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:visibility="invisible"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom">
+
+        </android.support.design.widget.TabLayout>
+    </FrameLayout>
+
+</LinearLayout>

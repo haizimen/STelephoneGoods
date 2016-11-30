@@ -4,8 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <com.phone1000.stelephonegoods.utils.MySwipeRefreshLayout
+        android:id="@+id/handpick_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="小象精选" />
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/handpick_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.phone1000.stelephonegoods.utils.MySwipeRefreshLayout>
 </LinearLayout>
