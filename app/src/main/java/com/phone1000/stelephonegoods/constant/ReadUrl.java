@@ -51,4 +51,14 @@ public class ReadUrl {
             "    }\n" +
             "  ]\n" +
             "}\n";
+    public static final String CONTACT_CUSTOMER_URL="http://cdn.xiaoxiangyoupin.com/app/service/cs1.html";
+    public static final String PROBLEM_URL_ONE="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa1.html";
+    public static final String PROBLEM_URL_TWO="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa2.html";
+    public static final String PROBLEM_URL_THREE="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa3.html";
+    public static final String PROBLEM_URL_FOUR="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa4.html";
+    public static final String PROBLEM_URL_FIVE="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa5.html";
+    public static final String PROBLEM_URL_SIX="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa6.html";
+    public static final String USER_PRIVACY_URL="http://cdn.xiaoxiangyoupin.com/app/service/privacy.html";
+    public static final String USER_SERVICE_PROTOCOL="http://cdn.xiaoxiangyoupin.com/app/service/userproto.html";
+    public static final String USER_INSTALLMENT_PROTOCOL="http://cdn.xiaoxiangyoupin.com/app/service/fqproto.html";
 }

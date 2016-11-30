@@ -21,9 +21,11 @@ import com.phone1000.stelephonegoods.activities.CommenProblemActivity;
 import com.phone1000.stelephonegoods.activities.LoginActivity;
 import com.phone1000.stelephonegoods.activities.MinePayActivity;
 import com.phone1000.stelephonegoods.activities.OrderActivity;
+import com.phone1000.stelephonegoods.activities.ReadDetailActivity;
 import com.phone1000.stelephonegoods.activities.RecieverAddressActivity;
 import com.phone1000.stelephonegoods.activities.SettingsActivity;
 import com.phone1000.stelephonegoods.constant.ConstantStr;
+import com.phone1000.stelephonegoods.constant.ReadUrl;
 
 import org.w3c.dom.Text;
 
@@ -146,7 +148,9 @@ public class FragmentMine extends Fragment implements View.OnClickListener {
                 startActivity(reciecverAddress);
                 break;
             case R.id.mine_ll_contact:
-
+                Intent intent1 = new Intent(getContext(), ReadDetailActivity.class);
+                intent1.putExtra("url", ReadUrl.CONTACT_CUSTOMER_URL);
+                startActivity(intent1);
                 break;
             case R.id.mine_ll_commonproblem:
                 Intent commenProblem = new Intent(getContext(), CommenProblemActivity.class);

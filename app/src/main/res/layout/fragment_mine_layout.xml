@@ -54,7 +54,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:gravity="center"
-                android:text="七天待换额度  ￥0.00" />
+                android:text="七天待还额度  ￥0.00" />
         </LinearLayout>
 
         <LinearLayout

@@ -28,7 +28,9 @@
         <activity android:name=".activities.AccountActivity" />
         <activity android:name=".activities.RecieverAddressActivity" />
         <activity android:name=".activities.CommenProblemActivity" />
-        <activity android:name=".activities.SettingsActivity"></activity>
+        <activity android:name=".activities.SettingsActivity" />
+        <activity android:name=".activities.AboutUsActivity" />
+        <activity android:name=".activities.UserProtocolActivity"></activity>
     </application>
 
 </manifest>

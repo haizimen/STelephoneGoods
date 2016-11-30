@@ -56,6 +56,8 @@
                 android:layout_marginTop="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:scaleType="fitXY"
                 android:src="@mipmap/order_img_nothing"/>
             <TextView
