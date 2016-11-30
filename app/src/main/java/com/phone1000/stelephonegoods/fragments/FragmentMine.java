@@ -23,6 +23,7 @@ import com.phone1000.stelephonegoods.activities.MinePayActivity;
 import com.phone1000.stelephonegoods.activities.OrderActivity;
 import com.phone1000.stelephonegoods.activities.RecieverAddressActivity;
 import com.phone1000.stelephonegoods.activities.SettingsActivity;
+import com.phone1000.stelephonegoods.constant.ConstantStr;
 
 import org.w3c.dom.Text;
 
@@ -105,22 +106,27 @@ public class FragmentMine extends Fragment implements View.OnClickListener {
                 break;
             case  R.id.mine_textview_mineorder:
                 Intent mineOrder = new Intent(getContext(), OrderActivity.class);
+                mineOrder.putExtra("title", ConstantStr.MINEORDER);
                 startActivity(mineOrder);
                 break;
             case  R.id.mine_textview_waitpay:
                 Intent waitPay = new Intent(getContext(), OrderActivity.class);
+                waitPay.putExtra("title",ConstantStr.WAITPAY);
                 startActivity(waitPay);
                 break;
             case  R.id.mine_textview_waitgoods:
                 Intent waitGoods = new Intent(getContext(), OrderActivity.class);
+                waitGoods.putExtra("title",ConstantStr.WAITGOODS);
                 startActivity(waitGoods);
                 break;
             case  R.id.mine_textview_cash:
                 Intent cash = new Intent(getContext(), OrderActivity.class);
+                cash.putExtra("title",ConstantStr.CASH);
                 startActivity(cash);
                 break;
             case  R.id.mine_textview_free:
                 Intent free = new Intent(getContext(), OrderActivity.class);
+                free.putExtra("title",ConstantStr.FREE);
                 startActivity(free);
                 break;
             case R.id.mine_ll_minepay:
