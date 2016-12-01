@@ -18,6 +18,7 @@ import com.phone1000.stelephonegoods.R;
 import com.phone1000.stelephonegoods.activities.CartActivity;
 import com.phone1000.stelephonegoods.activities.MovieActivity;
 import com.phone1000.stelephonegoods.adapters.HomeTitleAdapter;
+import com.phone1000.stelephonegoods.constant.HttpParams;
 import com.phone1000.stelephonegoods.constant.ReadUrl;
 import com.phone1000.stelephonegoods.model.HomeTitle;
 import com.phone1000.stelephonegoods.model.LogoModel;
@@ -64,6 +65,7 @@ public class FragmentHomePage extends BaseFragment implements View.OnClickListen
     private void getImg() {
         OkHttpUtils.get()
                 .url(ReadUrl.HOMELOGOURL)
+                .addHeader(HttpParams.CACHE_CONTROL,"only-if-cache,max-stale" + 5 * 60 * 60)
                 .build()
                 .execute(new StringCallback() {
                     @Override

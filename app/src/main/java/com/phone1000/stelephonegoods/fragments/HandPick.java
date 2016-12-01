@@ -1,6 +1,7 @@
 package com.phone1000.stelephonegoods.fragments;
 
-import android.graphics.BitmapFactory;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,18 +15,18 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TabHost;
 
 import com.google.gson.Gson;
 import com.phone1000.stelephonegoods.BaseFragment;
 import com.phone1000.stelephonegoods.R;
+import com.phone1000.stelephonegoods.activities.NavigationActivity;
 import com.phone1000.stelephonegoods.adapters.HandPickHeaderAdapter;
 import com.phone1000.stelephonegoods.adapters.HandPickListAdapter;
 import com.phone1000.stelephonegoods.adapters.HandPickRecyclerAdapter;
+import com.phone1000.stelephonegoods.constant.HttpParams;
 import com.phone1000.stelephonegoods.constant.ReadUrl;
 import com.phone1000.stelephonegoods.custormView.CustormViewPager;
 import com.phone1000.stelephonegoods.model.HandpickModel;
@@ -45,11 +46,13 @@ import okhttp3.Call;
 public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener {
     private static final int GO = 59;
     private static final int JUMP = 60;
+    private static final int OPEN = 61;
     private ListView mList;
     private HandPickListAdapter adapter;
     private SwipeRefreshLayout mRefresh;
     private LayoutInflater inflater;
     private View view;
+    private ProgressDialog dialog;
     private CustormViewPager mPager;
     private ImageView mImg;
     private RecyclerView mRecycler;
@@ -74,14 +77,12 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
         }
     };
     private HandPickRecyclerAdapter adapterRecycler;
-    private float downX;
-    private float downY;
-    private float upX;
-    private float upY;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         layout = inflater.inflate(R.layout.handpick_layout, container, false);
         handler.sendEmptyMessageDelayed(JUMP, 3000);
         return layout;
@@ -91,6 +92,10 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        dialog=new ProgressDialog(getActivity());
+        dialog.setMessage("正在加载...");
+        dialog.setMax(100);
+        dialog.show();
         inflater = LayoutInflater.from(getContext());
         mList = ((ListView) layout.findViewById(R.id.handpick_list));
         mRefresh = ((MySwipeRefreshLayout) layout.findViewById(R.id.handpick_refresh));
@@ -113,12 +118,14 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
         getImg();
         mList.addHeaderView(view);
         setupView();
+        dialog.dismiss();
     }
 
 
     private void getImg() {
         OkHttpUtils.get()
                 .url(ReadUrl.HANDPICKURL)
+                .addHeader(HttpParams.CACHE_CONTROL,"only-if-cache,max-stale" + 60 * 60 * 60)
                 .build()
                 .execute(new StringCallback() {
 
@@ -131,7 +138,7 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
                     @Override
                     public void onResponse(String response, int id) {
                         Gson gson = new Gson();
-                        HandpickModel list = gson.fromJson(response, HandpickModel.class);
+                        final HandpickModel list = gson.fromJson(response, HandpickModel.class);
                         imgs = new ArrayList<ImageView>();
                         ImageView img1 = new ImageView(getContext());
                         ImageView img2 = new ImageView(getContext());
@@ -166,7 +173,15 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
                                 point.setImageResource(R.mipmap.point_select);
                                 mLinear.addView(point, 0);
                             }
-
+                            final int j = i;
+                            imgs.get(i).setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(getContext(), NavigationActivity.class);
+                                    intent.putExtra("id", list.getBody().getCarousels().get(j).getId());
+                                    startActivity(intent);
+                                }
+                            });
                         }
                         mPager.setOnTouchListener(new View.OnTouchListener() {
 
@@ -192,7 +207,7 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
                                 ImageView childAt = (ImageView) mLinear.getChildAt(position);
                                 childAt.setImageResource(R.mipmap.point_select);
                                 ((ImageView) mLinear.getChildAt(i)).setImageResource(R.mipmap.point);
-                                i = position;
+                                i = position % 7;
                                 Log.e("NMB", "onPageScrolled: " + i);
                             }
 
@@ -213,6 +228,7 @@ public class HandPick extends BaseFragment implements SwipeRefreshLayout.OnRefre
     private void setupView() {
         OkHttpUtils.get()
                 .url(ReadUrl.HANDPICKURL)
+                .addHeader(HttpParams.CACHE_CONTROL,"only-if-cache,max-stale" + 5 * 60 * 60)
                 .build()
                 .execute(new StringCallback() {
                     @Override

@@ -4,8 +4,8 @@ package com.phone1000.stelephonegoods.constant;
  * Created by my on 2016/11/28.
  */
 public class ReadUrl {
-    public static final String READ_URL="http://120.27.141.138:8080/dsp-manager-new/api/getArticles.json";
-    public static String jsonStr="{\n" +
+    public static final String READ_URL = "http://120.27.141.138:8080/dsp-manager-new/api/getArticles.json";
+    public static String jsonStr = "{\n" +
             "  \"data\": [\n" +
             "    {\n" +
             "      \"content\": \"http://mp.weixin.qq.com/s?__biz=MzIwNzIzODUyNw==&mid=2650385003&idx=1&sn=b2a35aab2443d547bddac1aa55844dba&chksm=8f186e7bb86fe76d5838c57ad5ed8e517dbeed26d29046f337f99e556dc690f76e6af5ab9dce&scene=4#wechat_redirect\",\n" +
@@ -51,4 +51,22 @@ public class ReadUrl {
             "    }\n" +
             "  ]\n" +
             "}\n";
+
+    public static final String HANDPICKURL = "http://api.xiaoxiangyoupin.com/v2/good/goodGroups.json";
+
+    public static final String HOMETITLEURL = "http://api.xiaoxiangyoupin.com/v2/good/getPageViews.json";
+    public static final String HOMELOGOURL = "http://api.xiaoxiangyoupin.com/v2/good/handle.json";
+    public static final String HANDPICKNAVIGATIONURL = "http://api.xiaoxiangyoupin.com/v2/good/queryGoodsByBannerId/";
+    public static final String NONEURL = ".json";
+    public static final String CONTACT_CUSTOMER_URL="http://cdn.xiaoxiangyoupin.com/app/service/cs1.html";
+    public static final String PROBLEM_URL_ONE="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa1.html";
+    public static final String PROBLEM_URL_TWO="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa2.html";
+    public static final String PROBLEM_URL_THREE="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa3.html";
+    public static final String PROBLEM_URL_FOUR="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa4.html";
+    public static final String PROBLEM_URL_FIVE="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa5.html";
+    public static final String PROBLEM_URL_SIX="http://cdn.xiaoxiangyoupin.com/app/service/qa/qa6.html";
+    public static final String USER_PRIVACY_URL="http://cdn.xiaoxiangyoupin.com/app/service/privacy.html";
+    public static final String USER_SERVICE_PROTOCOL="http://cdn.xiaoxiangyoupin.com/app/service/userproto.html";
+    public static final String USER_INSTALLMENT_PROTOCOL="http://cdn.xiaoxiangyoupin.com/app/service/fqproto.html";
+
 }
