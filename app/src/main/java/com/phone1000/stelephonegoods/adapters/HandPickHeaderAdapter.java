@@ -42,6 +42,6 @@ public class HandPickHeaderAdapter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView(imgs.get(position));
     }
-
+    
 
 }

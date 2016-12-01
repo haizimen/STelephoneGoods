@@ -16,7 +16,8 @@
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:src="@mipmap/movie_back" />
+            android:src="@mipmap/movie_back"
+            android:padding="18dp"/>
 
         <TextView
             android:id="@+id/movie_title"

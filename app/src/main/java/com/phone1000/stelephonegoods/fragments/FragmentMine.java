@@ -13,7 +13,6 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.phone1000.stelephonegoods.R;
-import com.phone1000.stelephonegoods.SElephant;
 import com.phone1000.stelephonegoods.activities.AccountActivity;
 import com.phone1000.stelephonegoods.activities.CashUpdateActivity;
 import com.phone1000.stelephonegoods.activities.CertificationActivity;
@@ -26,8 +25,6 @@ import com.phone1000.stelephonegoods.activities.RecieverAddressActivity;
 import com.phone1000.stelephonegoods.activities.SettingsActivity;
 import com.phone1000.stelephonegoods.constant.ConstantStr;
 import com.phone1000.stelephonegoods.constant.ReadUrl;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by my on 2016/11/28.

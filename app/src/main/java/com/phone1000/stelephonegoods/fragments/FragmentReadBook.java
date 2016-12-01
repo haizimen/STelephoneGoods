@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,6 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonToken;
 import com.phone1000.stelephonegoods.R;
 import com.phone1000.stelephonegoods.activities.ReadDetailActivity;
 import com.phone1000.stelephonegoods.adapters.ReadListAdapter;
@@ -26,15 +24,8 @@ import com.phone1000.stelephonegoods.model.ReadListContent;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.xutils.common.Callback;
-import org.xutils.http.RequestParams;
-import org.xutils.x;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 
