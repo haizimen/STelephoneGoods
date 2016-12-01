@@ -61,7 +61,9 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
     private Button ceshiceshi;
     private String mFenthumbnailUrl;
     private String mFengoodsName;
-
+    private Button mImmediatelyBuy;
+    private int promotionPrice;
+    private int peroidInstalmentAmount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,6 +113,10 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
 
         ceshiceshi = (Button) findViewById(R.id.btn_add);
         ceshiceshi.setOnClickListener(this);
+
+
+        mImmediatelyBuy = (Button) findViewById(R.id.btn_immediately_buy);
+        mImmediatelyBuy.setOnClickListener(this);
     }
 
 
@@ -124,6 +130,8 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
                 .execute(new JsonCallback<SupertwoModel>() {
 
 
+
+
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         Log.e(TAG, "onError: sdasdasdasd" );
@@ -134,13 +142,13 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
                         mFengoodsName = response.getBody().getGood().getGoodsName();
                         mGoodname.setText(mFengoodsName);
 
-                        int promotionPrice = response.getBody().getGood().getPromotionPrice();
+                        promotionPrice = response.getBody().getGood().getPromotionPrice();
                         double v2 = promotionPrice / 100.00;
                         String string ="￥"+v2;
                         SpannableString sp = new SpannableString(string);
                         sp.setSpan(new StrikethroughSpan(), 0, string.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                         mPromotionPrice.setText(sp);
-                        int peroidInstalmentAmount = response.getBody().getGood().getPeroidInstalmentAmount();
+                        peroidInstalmentAmount = response.getBody().getGood().getPeroidInstalmentAmount();
                         double v = peroidInstalmentAmount / 100.0;
                         mPeroidInstalmentAmount.setText("￥"+v+"x12期");
                         int directPaymentAmount = response.getBody().getGood().getDirectPaymentAmount();
@@ -215,12 +223,10 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
     public void onComplete(Platform platform, int i, HashMap<String, Object> hashMap) {
 
     }
-
     @Override
     public void onError(Platform platform, int i, Throwable throwable) {
 
     }
-
     @Override
     public void onCancel(Platform platform, int i) {
 
@@ -248,6 +254,15 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
             case R.id.btn_add:
 
                break;
+
+            case R.id.btn_immediately_buy:
+                Intent intent = new Intent(this, BuyCostActivity.class);
+                intent.putExtra("image",mFenthumbnailUrl);
+                intent.putExtra("title",mFengoodsName);
+                intent.putExtra("value",promotionPrice);
+                intent.putExtra("valuefen",peroidInstalmentAmount);
+                startActivity(intent);
+                break;
         }
     }
 }

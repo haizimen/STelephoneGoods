@@ -60,7 +60,7 @@ public class FragmentReadBook extends Fragment implements AdapterView.OnItemClic
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initView();
-//        setupData(true);
+        setupData(true);
     }
 
     private void setupData(boolean isUpdate) {
@@ -90,13 +90,13 @@ public class FragmentReadBook extends Fragment implements AdapterView.OnItemClic
     }
 
     private void initView() {
-//        mListView = (ListView) layout.findViewById(R.id.fragment_read_listview);
-//        refreshLayout = (SwipeRefreshLayout) layout.findViewById(R.id.fragment_read_refresh);
-//        adapter = new ReadListAdapter(getContext(),null, R.layout.fragment_read_layout_zero,R.layout.fragment_read_layout_one);
-//        mListView.setAdapter(adapter);
-//        refreshLayout.setOnRefreshListener(this);
-//        refreshLayout.setColorSchemeResources(R.color.colorAccent);
-//        mListView.setOnItemClickListener(this);
+        mListView = (ListView) layout.findViewById(R.id.fragment_read_listview);
+        refreshLayout = (SwipeRefreshLayout) layout.findViewById(R.id.fragment_read_refresh);
+        adapter = new ReadListAdapter(getContext(),null, R.layout.fragment_read_layout_zero,R.layout.fragment_read_layout_one);
+        mListView.setAdapter(adapter);
+        refreshLayout.setOnRefreshListener(this);
+        refreshLayout.setColorSchemeResources(R.color.colorAccent);
+        mListView.setOnItemClickListener(this);
     }
 
     @Override
