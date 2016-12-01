@@ -4,8 +4,8 @@ package com.phone1000.stelephonegoods.constant;
  * Created by my on 2016/11/28.
  */
 public class ReadUrl {
-    public static final String READ_URL = "http://120.27.141.138:8080/dsp-manager-new/api/getArticles.json";
-    public static String jsonStr = "{\n" +
+    public static final String READ_URL="http://120.27.141.138:8080/dsp-manager-new/api/getArticles.json";
+    public static String jsonStr="{\n" +
             "  \"data\": [\n" +
             "    {\n" +
             "      \"content\": \"http://mp.weixin.qq.com/s?__biz=MzIwNzIzODUyNw==&mid=2650385003&idx=1&sn=b2a35aab2443d547bddac1aa55844dba&chksm=8f186e7bb86fe76d5838c57ad5ed8e517dbeed26d29046f337f99e556dc690f76e6af5ab9dce&scene=4#wechat_redirect\",\n" +
@@ -51,11 +51,4 @@ public class ReadUrl {
             "    }\n" +
             "  ]\n" +
             "}\n";
-
-    public static final String HANDPICKURL = "http://api.xiaoxiangyoupin.com/v2/good/goodGroups.json";
-
-    public static final String HOMETITLEURL = "http://api.xiaoxiangyoupin.com/v2/good/getPageViews.json";
-    public static final String HOMELOGOURL = "http://api.xiaoxiangyoupin.com/v2/good/handle.json";
-    public static final String HANDPICKNAVIGATIONURL = "http://api.xiaoxiangyoupin.com/v2/good/queryGoodsByBannerId/";
-    public static final String NONEURL = ".json";
 }

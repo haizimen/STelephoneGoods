@@ -1,20 +1,19 @@
-
 package com.phone1000.stelephonegoods.activities;
 
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
-        import android.net.Uri;
-        import android.provider.ContactsContract;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.util.Log;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.EditText;
-        import android.widget.ImageView;
+import android.net.Uri;
+import android.provider.ContactsContract;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 
-        import com.phone1000.stelephonegoods.R;
+import com.phone1000.stelephonegoods.R;
 
 public class CertificationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,7 +46,7 @@ public class CertificationActivity extends AppCompatActivity implements View.OnC
         bankName = (EditText) findViewById(R.id.certification_textview_bank);
         phoneNum = (EditText) findViewById(R.id.certification_textview_phonenum);
         identifyCode = (EditText) findViewById(R.id.certification_textview_identifycode);
-        username.clearFocus();
+
         btnVerify = (Button) findViewById(R.id.certification_btn_verify);
         Button sendCode = (Button) findViewById(R.id.certification_button_sendCode);
         btnBack.setOnClickListener(this);
@@ -94,4 +93,3 @@ public class CertificationActivity extends AppCompatActivity implements View.OnC
         }
     }
 }
-
