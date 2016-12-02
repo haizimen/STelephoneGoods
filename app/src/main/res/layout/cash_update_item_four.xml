@@ -33,7 +33,7 @@
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="#fff"
-            android:background="@mipmap/list_cash_ticket_bg"/>
+            android:background="@drawable/cash_update_textview_bg"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"

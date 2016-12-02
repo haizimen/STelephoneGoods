@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.jakewharton.butterknife'
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
@@ -17,16 +17,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    repositories{
+        flatDir{
+            dirs 'libs'
+        }
+    }
 }
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.zhy:okhttputils:2.6.2'
+    compile 'org.xutils:xutils:3.3.38'
+    compile project(':studentlibrary')
     compile 'com.android.support:design:24.1.1'
-    compile 'com.jakewharton:butterknife:8.4.0'
-    compile 'com.android.support:support-v4:23.4.0'
-    compile 'com.google.code.gson:gson:2.8.0'
     compile 'jp.wasabeef:picasso-transformations:2.1.0'
     compile project(':teachlibrary')
+    compile 'com.android.support:cardview-v7:24.1.1'
+    compile 'de.greenrobot:eventbus:3.0.0-beta1'
 }

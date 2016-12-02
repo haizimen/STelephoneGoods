@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -41,7 +42,7 @@ import java.util.List;
 /**
  * Created by my on 2016/11/28.
  */
-public class FragmentReadBook extends Fragment implements AdapterView.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
+public class FragmentReadBook extends Fragment implements AdapterView.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener, AbsListView.OnScrollListener {
     private String TAG=FragmentReadBook.class.getSimpleName();
     private View layout;
     private ListView mListView;
@@ -60,7 +61,7 @@ public class FragmentReadBook extends Fragment implements AdapterView.OnItemClic
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initView();
-//        setupData(true);
+        setupData(true);
     }
 
     private void setupData(boolean isUpdate) {
@@ -69,19 +70,16 @@ public class FragmentReadBook extends Fragment implements AdapterView.OnItemClic
             JSONArray data = jsonObject.getJSONArray("data");
             Type type = new TypeToken<List<ReadListContent>>() {
             }.getType();
-            Gson gson = new Gson();
-            List<ReadListContent> list=gson.fromJson(data.toString(),type);
-            for (int i = 0; i < list.size(); i++) {
+         List<ReadListContent>lists=   new Gson().fromJson(data.toString(),type);
+            for (int i = 0; i < lists.size(); i++) {
                 if (i%3==0) {
-                    list.get(i).setType(0);
-                }else{
-                    list.get(i).setType(1);
+                    lists.get(i).setType(1);
                 }
             }
-            if (isUpdate) {
-                adapter.updateRes(list);
+            if (isUpdate){
+                adapter.updateRes(lists);
             }else{
-                adapter.addRes(list);
+                adapter.addRes(lists);
             }
 
         } catch (JSONException e) {
@@ -90,13 +88,14 @@ public class FragmentReadBook extends Fragment implements AdapterView.OnItemClic
     }
 
     private void initView() {
-//        mListView = (ListView) layout.findViewById(R.id.fragment_read_listview);
-//        refreshLayout = (SwipeRefreshLayout) layout.findViewById(R.id.fragment_read_refresh);
-//        adapter = new ReadListAdapter(getContext(),null, R.layout.fragment_read_layout_zero,R.layout.fragment_read_layout_one);
-//        mListView.setAdapter(adapter);
-//        refreshLayout.setOnRefreshListener(this);
-//        refreshLayout.setColorSchemeResources(R.color.colorAccent);
-//        mListView.setOnItemClickListener(this);
+        mListView = (ListView) layout.findViewById(R.id.fragment_read_listview);
+        refreshLayout = (SwipeRefreshLayout) layout.findViewById(R.id.fragment_read_refresh);
+        adapter = new ReadListAdapter(getContext(),null, R.layout.fragment_read_layout_zero,R.layout.fragment_read_layout_one);
+        mListView.setAdapter(adapter);
+        refreshLayout.setOnRefreshListener(this);
+        refreshLayout.setColorSchemeResources(R.color.colorAccent);
+        mListView.setOnItemClickListener(this);
+        mListView.setOnScrollListener(this);
     }
 
     @Override
@@ -116,5 +115,17 @@ public class FragmentReadBook extends Fragment implements AdapterView.OnItemClic
                 setupData(true);
             }
         },2000);
+    }
+
+    @Override
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+    }
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+        if (firstVisibleItem+visibleItemCount==totalItemCount) {
+            setupData(false);
+        }
     }
 }

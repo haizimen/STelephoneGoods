@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.phone1000.stelephonegoods.activities.BankActivity">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:background="#fff"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/bank_back"
+            android:layout_width="30dp"
+            android:background="#fff"
+            android:src="@mipmap/login_back"
+            android:layout_height="30dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="开户行"
+            android:textColor="#000"
+            android:background="#fff"
+            android:paddingRight="25dp"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/bank_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+</LinearLayout>

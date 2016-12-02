@@ -62,20 +62,21 @@ public class CashUpdateActivity extends AppCompatActivity implements View.OnClic
         btnFive.setOnClickListener(this);
         btnSix.setOnClickListener(this);
         mImageBack.setOnClickListener(this);
-        if (isCertigition) {
-            btnOne.setClickable(false);
-            btnTwo.setClickable(true);
-            btnThree.setClickable(true);
-            btnFour.setClickable(true);
-            btnFive.setClickable(true);
-            btnSix.setClickable(true);
+        if (!isCertigition) {
+            btnOne.setEnabled(true);
+            btnTwo.setEnabled(false);
+            btnThree.setEnabled(false);
+            btnFour.setEnabled(false);
+            btnFive.setEnabled(false);
+            btnSix.setEnabled(false);
+
         }else{
-            btnOne.setClickable(true);
-            btnTwo.setClickable(false);
-            btnThree.setClickable(false);
-            btnFour.setClickable(false);
-            btnFive.setClickable(false);
-            btnSix.setClickable(false);
+            btnOne.setEnabled(false);
+            btnTwo.setEnabled(true);
+            btnThree.setEnabled(true);
+            btnFour.setEnabled(true);
+            btnFive.setEnabled(true);
+            btnSix.setEnabled(true);
         }
         List<View> data=new ArrayList<>();
         data.add(one);

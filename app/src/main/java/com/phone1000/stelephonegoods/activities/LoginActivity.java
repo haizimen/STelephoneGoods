@@ -1,5 +1,6 @@
 package com.phone1000.stelephonegoods.activities;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -17,12 +18,19 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.phone1000.stelephonegoods.MainActivity;
 import com.phone1000.stelephonegoods.R;
+import com.phone1000.stelephonegoods.SElephant;
 import com.phone1000.stelephonegoods.adapters.LoginViewPagerAdapter;
+import com.phone1000.stelephonegoods.model.MyEvent;
+import com.phone1000.stelephonegoods.model.OtherEvent;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.greenrobot.event.EventBus;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -34,6 +42,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private boolean usePasswordIsOk = false;
     private String TAG=LoginActivity.class.getSimpleName();
+    private EditText editTextPhone;
+    private EditText editTextIdentify;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +54,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void initView() {
+
         ImageView btnBack = (ImageView) findViewById(R.id.login_back);
         TextView btnRegist = (TextView) findViewById(R.id.login_registe);
         TabLayout tablayout = (TabLayout) findViewById(R.id.login_tablayout);
@@ -60,13 +72,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         viewPger.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tablayout));
         btnBack.setOnClickListener(this);
         btnRegist.setOnClickListener(this);
-        EditText editTextPhone = (EditText) view1.findViewById(R.id.login_phonefast_edittext_phone);
-        EditText editTextIdentifyCode = (EditText) view1.findViewById(R.id.login_phonefast_edittext_identifycode);
+        editTextPhone = (EditText) view1.findViewById(R.id.login_phonefast_edittext_phone);
+        editTextIdentify = (EditText) view1.findViewById(R.id.login_phonefast_edittext_identifycode);
         EditText userPhone = (EditText) view2.findViewById(R.id.login_user_password_edittext_phone);
         final EditText userPassword = (EditText) view2.findViewById(R.id.login_user_password_edittext_password);
         final Button btnUser = (Button) view2.findViewById(R.id.login_user_password_btn);
         CheckBox btnShow = (CheckBox) view2.findViewById(R.id.login_user_password_iscansee);
         final Button btnPhone = (Button) view1.findViewById(R.id.login_phonefast_btn);
+        btnPhone.setOnClickListener(this);
+        btnUser.setOnClickListener(this);
         final Button sendIdentify = (Button) view1.findViewById(R.id.login_phonefast_checkbox);
         btnShow.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
                                                @Override
@@ -165,7 +179,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             }
         });
-        editTextIdentifyCode.addTextChangedListener(new TextWatcher() {
+        editTextIdentify.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -202,6 +216,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.login_registe:
 
                 break;
+            case R.id.login_user_password_btn:
+
+                break;
+            case R.id.login_phonefast_btn:
+                if (editTextIdentify.getText().toString().equals("123456")&&editTextPhone.getText().toString().equals("11111111111")) {
+                    SElephant.isLogin=true;
+                    Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this, MainActivity.class);
+                    EventBus.getDefault().postSticky(new OtherEvent());
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(LoginActivity.this, "验证码错误", Toast.LENGTH_SHORT).show();
+                }
         }
     }
 

@@ -1,40 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <RelativeLayout
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp">
-        <ImageView
-            android:id="@+id/fragment_read_item_one_image"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_width="@dimen/fragment_read_item_one_imagewidth"
-            android:layout_height="@dimen/fragment_read_item_one_image_height"
-            android:src="@mipmap/ic_launcher"/>
-        <TextView
-            android:id="@+id/fragment_read_item_one_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardElevation="10dp">
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lines="2"
-            android:textSize="17sp"
-            android:textColor="#000"
-            android:layout_marginTop="2dp"
-            android:text="出行利器！有了这辆可三秒收纳的自行车，还要什么"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/fragment_read_item_one_image"/>
-        <TextView
-            android:id="@+id/fragment_read_item_one_summary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lines="2"
-            android:layout_below="@id/fragment_read_item_one_title"
-            android:layout_marginTop="10dp"
-            android:textSize="15sp"
-            android:text="身为一个苦逼的加班族，每天出地铁的最后一公里都是很折磨人的"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/fragment_read_item_one_image"/>
-    </RelativeLayout>
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:id="@+id/fragment_read_item_one_image"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="@dimen/fragment_read_item_one_imagewidth"
+                android:layout_height="@dimen/fragment_read_item_one_image_height"
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:id="@+id/fragment_read_item_one_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:textSize="17sp"
+                android:textColor="#000"
+                android:layout_marginTop="2dp"
+                android:text="出行利器！有了这辆可三秒收纳的自行车，还要什么"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/fragment_read_item_one_image"/>
+            <TextView
+                android:id="@+id/fragment_read_item_one_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:layout_below="@id/fragment_read_item_one_title"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:text="身为一个苦逼的加班族，每天出地铁的最后一公里都是很折磨人的"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/fragment_read_item_one_image"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
 
 </RelativeLayout>

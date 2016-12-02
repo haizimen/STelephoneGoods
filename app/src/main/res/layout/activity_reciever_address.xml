@@ -16,7 +16,7 @@
             android:textSize="20sp"
             android:textColor="#333"
             android:gravity="center"
-            android:text="我的订单"/>
+            android:text="收货地址"/>
         <ImageView
             android:background="#fff"
             android:id="@+id/address_back"
@@ -31,11 +31,13 @@
         android:layout_marginTop="1dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/address_lv"
+            android:layout_marginBottom="45dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
         <LinearLayout
+            android:visibility="gone"
             android:background="#fff"
             android:id="@+id/address_empty"
             android:layout_width="match_parent"
@@ -64,5 +66,15 @@
                 android:background="@mipmap/list_cash_ticket_bg"
                 android:text="添加新地址"/>
         </LinearLayout>
+        <Button
+            android:layout_marginTop="1dp"
+            android:id="@+id/reciever_add_btn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            android:background="#fff"
+            android:text="添加新地址"
+            android:textColor="@color/colorAccent"
+            />
     </FrameLayout>
 </LinearLayout>

@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".SElephant"
@@ -21,14 +23,24 @@
         </activity>
         <activity android:name=".activities.ReadDetailActivity" />
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.CertificationActivity" />
+        <activity
+            android:name=".activities.CertificationActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity android:name=".activities.CashUpdateActivity" />
         <activity android:name=".activities.OrderActivity" />
         <activity android:name=".activities.MinePayActivity" />
         <activity android:name=".activities.AccountActivity" />
         <activity android:name=".activities.RecieverAddressActivity" />
         <activity android:name=".activities.CommenProblemActivity" />
-        <activity android:name=".activities.SettingsActivity"></activity>
+        <activity android:name=".activities.NavigationActivity" />
+        <activity android:name=".activities.CartActivity" />
+        <activity android:name=".activities.MovieActivity" />
+        <activity android:name=".activities.UserProtocolActivity" />
+        <activity android:name=".activities.AboutUsActivity" />
+        <activity android:name=".activities.SettingsActivity" />
+        <activity android:name=".activities.BankActivity" />
+        <activity android:name=".activities.AddNewAddressActivity" />
+        <activity android:name=".activities.EditTextActivity"></activity>
     </application>
 
 </manifest>

@@ -1,8 +1,10 @@
 package com.phone1000.stelephonegoods.activities;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,6 +15,8 @@ import com.phone1000.stelephonegoods.R;
 import com.phone1000.stelephonegoods.constant.ReadUrl;
 
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private String TAG=SettingsActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +65,15 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 Toast.makeText(SettingsActivity.this, "已是最新版本 ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.settings_exit:
-
+                Snackbar.make(v,"确定要退出吗？（右划取消）",Snackbar.LENGTH_LONG).setAction("确定", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent3 = new Intent(SettingsActivity.this, LoginActivity.class);
+                        intent3.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent3);
+                    }
+                }).show();
+                Log.e(TAG, "onClick: ");
                 break;
         }
     }

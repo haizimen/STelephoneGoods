@@ -48,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="姓名  "
+            android:text="姓名　　　　"
             android:gravity="center"
             android:background="#fff"/>
         <EditText
@@ -65,10 +65,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="身份证号  "
+            android:text="身份证号　　"
             android:gravity="center"
             android:background="#fff"/>
         <EditText
+            android:inputType="number"
             android:id="@+id/certification_textview_userid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -82,7 +83,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="常用联系人  "
+            android:text="常用联系人　"
             android:gravity="center"
             android:background="#fff"/>
         <EditText
@@ -101,13 +102,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="银行卡号  "
+            android:text="银行卡号　　"
             android:gravity="center"
             android:background="#fff"/>
         <EditText
             android:id="@+id/certification_textview_bankcard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="number"
             android:background="#fff"/>
     </LinearLayout>
     <LinearLayout
@@ -119,7 +121,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="选择银行  "
+            android:text="选择银行　　"
             android:gravity="center"
             android:background="#fff"/>
         <EditText
@@ -127,6 +129,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#fff"
+            android:editable="false"
             android:drawableRight="@mipmap/list_disclosure_ndicator_nol_gray"
             android:layout_marginRight="15dp"/>
     </LinearLayout>
@@ -140,12 +143,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="手机号码  "
+            android:text="手机号码　　"
             android:gravity="center"
             android:background="#fff"/>
         <EditText
             android:id="@+id/certification_textview_phonenum"
             android:layout_width="220dp"
+            android:inputType="number"
             android:layout_height="match_parent"
             android:background="#fff"/>
         <Button
@@ -171,7 +175,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="验证码  "
+            android:text="验证码　　　"
             android:gravity="center"
             android:background="#fff"/>
         <EditText
@@ -179,6 +183,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#fff"
+            android:inputType="number"
             android:layout_marginRight="15dp"/>
     </LinearLayout>
     <Button
@@ -189,7 +194,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/login_button_bg_selector"
-        android:enabled="false"
+        android:enabled="true"
         android:text="确认"
         android:textColor="#fff"
         android:textSize="19sp" />

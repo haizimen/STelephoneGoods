@@ -11,12 +11,14 @@ import android.widget.TextView;
 
 import com.phone1000.stelephonegoods.R;
 import com.phone1000.stelephonegoods.constant.ConstantStr;
+import com.phone1000.stelephonegoods.constant.ReadUrl;
 
 public class OrderActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView mTitle;
     private TextView mConfige;
     private ListView mListView;
+    private String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         mListView = (ListView) findViewById(R.id.order_lv);
         LinearLayout empty = (LinearLayout) findViewById(R.id.order_empty);
         Intent intent = getIntent();
-        String title = intent.getStringExtra("title");
+        title = intent.getStringExtra("title");
         mTitle.setText(title);
         mListView.setEmptyView(empty);
         switch (title){
@@ -66,7 +68,13 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
                 finish();
                 break;
             case R.id.order_confige:
-
+                Intent intent = new Intent(this, ReadDetailActivity.class);
+                if (title.equals(ConstantStr.CASH)) {
+                    intent.putExtra("url", ReadUrl.CASH_USED_INTRODUCE_URL);
+                }else if(title.equals(ConstantStr.FREE)){
+                    intent.putExtra("url",ReadUrl.FREE_USED_INTRODUCE_URL);
+                }
+                startActivity(intent);
                 break;
         }
     }
