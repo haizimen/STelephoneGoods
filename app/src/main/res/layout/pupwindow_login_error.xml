@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="2dp">
+    <LinearLayout
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/login_error_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="确定要放弃付款?"
+            android:textSize="14sp"
+            android:layout_marginBottom="5dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="#d2d2d2"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/login_error_butt"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="取消"
+                android:background="@drawable/alipay_but_bg"
+                />
+            <Button
+                android:id="@+id/login_error_butt1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="确定"
+                android:layout_marginLeft="40dp"
+                android:textColor="#ffffff"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/super_button_bg"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

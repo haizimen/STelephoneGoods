@@ -75,7 +75,8 @@
         <activity android:name=".activities.CartActivity" />
         <activity android:name=".activities.MovieActivity" />
         <activity android:name=".activities.SettingsActivity" />
-        <activity android:name=".activities.BuyCostActivity"></activity>
+        <activity android:name=".activities.BuyCostActivity" />
+        <activity android:name=".activities.BuyAliPayActivity"></activity>
     </application>
 
 </manifest>

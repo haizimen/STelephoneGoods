@@ -130,7 +130,7 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
                 .execute(new JsonCallback<SupertwoModel>() {
 
 
-
+                    private int directPaymentAmount;
 
                     @Override
                     public void onError(Call call, Exception e, int id) {
@@ -151,7 +151,7 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
                         peroidInstalmentAmount = response.getBody().getGood().getPeroidInstalmentAmount();
                         double v = peroidInstalmentAmount / 100.0;
                         mPeroidInstalmentAmount.setText("￥"+v+"x12期");
-                        int directPaymentAmount = response.getBody().getGood().getDirectPaymentAmount();
+                        directPaymentAmount = response.getBody().getGood().getDirectPaymentAmount();
                         double v1 = directPaymentAmount / 100.0;
                         mDirectPaymentAmount.setText("直付立减￥"+v1);
                         mFenthumbnailUrl = response.getBody().getGood().getThumbnailUrl();
@@ -167,6 +167,8 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
 
                         List<SupertwoModel.BodyBean.GoodBean.PropertyValuesBean> propertyValues = body.getPropertyValues();
                         superTitleAdapters.updateRes(propertyValues);
+
+
 
 
 
@@ -237,10 +239,11 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
             case R.id.supeegoods_open_detail:
                 if (flag) {
                     mLinreaHintOpen.setVisibility(View.VISIBLE);
+                    mSupeeGoodsOpenDetail.setText("收起详情∧");
                     flag =false;
                 }else {
                     mLinreaHintOpen.setVisibility(View.GONE);
-
+                    mSupeeGoodsOpenDetail.setText("查看介绍详情∨");
                     flag =true;
                 }
                 break;
@@ -252,8 +255,11 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
                 finish();
                 break;
             case R.id.btn_add:
+//                Intent intent1 = new Intent(this,WebViewTestActivity.class);
+//                startActivity(intent1);
 
-               break;
+
+                break;
 
             case R.id.btn_immediately_buy:
                 Intent intent = new Intent(this, BuyCostActivity.class);
@@ -261,6 +267,7 @@ public class SuperBacKTwoActivity extends AppCompatActivity implements View.OnCl
                 intent.putExtra("title",mFengoodsName);
                 intent.putExtra("value",promotionPrice);
                 intent.putExtra("valuefen",peroidInstalmentAmount);
+                intent.putExtra("alipayjian",peroidInstalmentAmount);
                 startActivity(intent);
                 break;
         }

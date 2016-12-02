@@ -40,7 +40,6 @@ public class SuperTitleAdapters extends BaseAdapter {
             this.data.clear();
             this.data.addAll(data);
             notifyDataSetChanged();
-            Log.e(TAG, "updateRes: "+this.data.size() );
         }
     }
     @Override
@@ -69,7 +68,6 @@ public class SuperTitleAdapters extends BaseAdapter {
             holder= (ViewHolder1) convertView.getTag();
         }
         //夹在数据
-        Log.e(TAG, "getView: "+data.get(position));
         holder.textViewleft.setText(data.get(position).getProperty().getName());
         holder.textViewRight.setText(data.get(position).getOption().getPropertyOptionsValue());
 

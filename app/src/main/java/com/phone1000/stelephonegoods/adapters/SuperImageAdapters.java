@@ -44,7 +44,6 @@ public class SuperImageAdapters extends BaseAdapter {
             this.data.clear();
             this.data.addAll(data);
             notifyDataSetChanged();
-            Log.e(TAG, "updateRes: "+this.data.size() );
         }
     }
     @Override
@@ -73,7 +72,6 @@ public class SuperImageAdapters extends BaseAdapter {
           holder= (ViewHolder1) convertView.getTag();
         }
         //夹在数据
-        Log.e(TAG, "getView: "+data.get(position).getImageUrl());
         Picasso.with(context).load(data.get(position).getImageUrl()).into(holder.imageView);
         //x.image().bind(holder.imageView,data.get(position).getImageUrl());
         return convertView;

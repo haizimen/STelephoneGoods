@@ -467,7 +467,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/rele_supeegoods_open_detail"
                 android:layout_marginTop="@dimen/margin_40"
+                android:layout_marginLeft="50dp"
                 android:layout_marginRight="@dimen/margin_20">
                 <TextView
                     android:textSize="12sp"
@@ -475,10 +477,10 @@
                     android:id="@+id/supeegoods_open_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="查看介绍详情"
-                    android:drawableRight="@mipmap/more_down"
+                    android:text="查看介绍详情∨"
                     android:drawablePadding="5.0dip"
                     android:layout_alignParentRight="true" />
+                <!--android:drawableRight="@mipmap/more_down"-->
             </RelativeLayout>
             <View
                 android:layout_marginLeft="@dimen/margin_20"

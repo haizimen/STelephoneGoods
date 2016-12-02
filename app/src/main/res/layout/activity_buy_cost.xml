@@ -163,7 +163,7 @@
             android:textSize="15sp"
             android:text="265.37"/>
         <Button
-            android:id="@+id/super_buycost_commit"
+            android:id="@+id/super_buycost_commitc"
             android:layout_width="100dp"
             android:layout_height="36dp"
             android:layout_centerVertical="true"
