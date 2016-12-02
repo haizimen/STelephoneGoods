@@ -38,7 +38,9 @@ public class HandPickListAdapter extends TeachBaseAdapter<HandpickModel.BodyBean
         LinearLayoutManager manager = new LinearLayoutManager(context);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(new MyRecyclerAdapter(context, data.get(position).getSlideGoods()));
+        MyRecyclerAdapter adapter = new MyRecyclerAdapter(context, data.get(position).getSlideGoods());
+        adapter.onAttachedToRecyclerView(recyclerView);
+        recyclerView.setAdapter(adapter);
         img.setTag(data.get(position).getSubject().getId());
         img.setOnClickListener(this);
     }

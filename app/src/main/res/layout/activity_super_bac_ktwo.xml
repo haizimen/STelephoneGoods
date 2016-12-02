@@ -4,125 +4,136 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    android:focusableInTouchMode="true"
     android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context="com.phone1000.stelephonegoods.activities.SuperBacKTwoActivity">
-   <RelativeLayout
-       android:id="@+id/goods_top"
-       android:layout_width="match_parent"
-       android:layout_height="50dp">
 
-       <ImageView
-           android:id="@+id/super_back_image"
-           android:layout_width="20dp"
-           android:layout_height="20dp"
-           android:src="@mipmap/mq_ic_back"
-           android:layout_centerVertical="true"
-           android:layout_marginLeft="10dp"/>
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="商品详情"
-           android:textColor="#000000"
-           android:textSize="18sp"
-           android:layout_centerVertical="true"
-           android:layout_centerHorizontal="true"/>
+    <RelativeLayout
+        android:id="@+id/goods_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/super_back_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/mq_ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="商品详情"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
         <TextView
             android:id="@+id/super_fenxiangvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/fenxiangbg"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:background="@mipmap/fenxiangbg"
 
-            android:text="1111"
-            android:gravity="center_vertical|center_horizontal"
-            android:textColor="#ffffff"
             android:drawableLeft="@mipmap/nav_icon_share_nor"
-            android:paddingLeft="10dp"/>
-   </RelativeLayout>
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="10dp"
+            android:text="1111"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
     <ScrollView
         android:id="@+id/goods_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/goods_top"
-        android:overScrollMode="never"
         android:layout_marginBottom="50dp"
-        >
+        android:overScrollMode="never">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp">
-            <TextView
-                android:id="@+id/good_name"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="#333333"
-                android:gravity="center"
-                android:maxLines="2"
-                android:layout_marginBottom="10dp"
-                android:singleLine="false"/>
-            <TextView
-                android:id="@+id/goods_promotionPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:textSize="12sp"
-                android:textColor="#C0C0C0"
-                android:text="000000"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"/>
-            <TextView
-                android:id="@+id/goos_peroidInstalmentAmount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="18sp"
-                android:textColor="#F54B78"
-                android:layout_marginTop="15dp"
-                />
-            <TextView
-                android:id="@+id/good_directPaymentAmount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@mipmap/goods_details_label_img"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff"
-                android:layout_marginTop="21dp"
-                android:gravity="center"
-                android:textSize="11sp"
-                />
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/good_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/goods_promotionPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:text="000000"
+                    android:textColor="#C0C0C0"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/goos_peroidInstalmentAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#F54B78"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/good_directPaymentAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="21dp"
+                    android:background="@mipmap/goods_details_label_img"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="11sp" />
             </LinearLayout>
+
             <ImageView
                 android:id="@+id/goods_img_thumbnailUrl"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp" />
+
             <View
-                android:background="#C6C6C6"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:layout_marginTop="15dp" />
+                android:layout_marginTop="15dp"
+                android:background="#C6C6C6" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="40dp"
                 android:orientation="horizontal">
+
                 <TextView
-                    android:textSize="18sp"
-                    android:textColor="#333333"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="商品来源" />
+                    android:text="商品来源"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+
                 <View
                     android:layout_width="0.5dp"
                     android:layout_height="17.0dip"
@@ -132,416 +143,479 @@
                     android:background="#C6C6C6" />
 
                 <TextView
-                    android:textSize="15dp"
-                    android:textColor="#C0C0C0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Commodity source" />
+                    android:text="Commodity source"
+                    android:textColor="#C0C0C0"
+                    android:textSize="15dp" />
             </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="40dp">
 
-
-            <TextView
-                android:textSize="13dp"
-                android:textColor="#747474"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="商品来源:  " />
-            <ImageView
-                android:layout_gravity="center_vertical"
-                android:id="@+id/goods_sourcePlatformPicurl"
-                android:layout_width="wrap_content"
-                android:layout_height="25.0dip" />
-            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="40dp"
                 android:orientation="horizontal">
-                <TextView
-                    android:textSize="13sp"
-                    android:textColor="#747474"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="商家名称:  " />
+
 
                 <TextView
-                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="商品来源:  "
                     android:textColor="#747474"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:id="@+id/goods_sourcePlatformPicurl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25.0dip"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="商家名称:  "
+                    android:textColor="#747474"
+                    android:textSize="13sp" />
+
+                <TextView
                     android:id="@+id/goods_source_goodsSourceStoreName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textColor="#747474"
+                    android:textSize="13sp" />
 
             </LinearLayout>
+
             <View
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="#C6C6C6"/>
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="40dp"
+                android:background="#C6C6C6" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp">
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
                 <TextView
-                    android:textSize="18sp"
-                    android:textColor="#333333"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="商品属性" />
+                    android:text="商品属性"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+
                 <View
                     android:layout_width="0.5dp"
                     android:layout_height="17.0dip"
-                    android:layout_marginLeft="5.0dip"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5.0dip"
                     android:layout_marginRight="5.0dip"
                     android:background="#C6C6C6" />
 
                 <TextView
-                    android:textSize="15dp"
-                    android:textColor="#C0C0C0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Commodity attribute" />
+                    android:text="Commodity attribute"
+                    android:textColor="#C0C0C0"
+                    android:textSize="15dp" />
             </LinearLayout>
+
             <com.phone1000.stelephonegoods.customs.ListViewImage
                 android:id="@+id/goods_lv_title"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
                 android:background="@null"
                 android:divider="#00000000"
-                android:scrollbars="none"/>
+                android:scrollbars="none" />
+
             <View
 
-                android:layout_marginTop="40dp"
-
-                android:layout_marginBottom="40dp"
                 android:layout_width="match_parent"
+
                 android:layout_height="0.5dp"
-                android:background="#C6C6C6"/>
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="40dp"
+                android:background="#C6C6C6" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp">
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
                 <TextView
-                    android:textSize="18sp"
-                    android:textColor="#333333"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="商品详情" />
+                    android:text="商品详情"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+
                 <View
                     android:layout_width="0.5dp"
                     android:layout_height="17.0dip"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5.0dip"
                     android:layout_marginRight="5.0dip"
-                    android:layout_gravity="center_vertical"
                     android:background="#C6C6C6" />
 
                 <TextView
-                    android:textSize="15dp"
-                    android:textColor="#C0C0C0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Product details" />
+                    android:text="Product details"
+                    android:textColor="#C0C0C0"
+                    android:textSize="15dp" />
             </LinearLayout>
+
             <com.phone1000.stelephonegoods.customs.ListViewImage
                 android:id="@+id/goods_lv_image"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none"/>
+                android:layout_marginTop="20dp"
+                android:scrollbars="none" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp">
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
                 <TextView
-                    android:textSize="18sp"
-                    android:textColor="#333333"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="品牌故事" />
+                    android:text="品牌故事"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+
                 <View
                     android:layout_width="0.5dp"
                     android:layout_height="17.0dip"
-                    android:layout_marginLeft="5.0dip"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5.0dip"
                     android:layout_marginRight="5.0dip"
                     android:background="#C6C6C6" />
 
                 <TextView
-                    android:textSize="15dp"
-                    android:textColor="#C0C0C0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Brand story" />
+                    android:text="Brand story"
+                    android:textColor="#C0C0C0"
+                    android:textSize="15dp" />
             </LinearLayout>
+
             <ImageView
-                android:layout_gravity="center_horizontal"
                 android:id="@+id/goods_brand_logo"
                 android:layout_width="110.0dip"
-                android:layout_height="110.0dip" />
+                android:layout_height="110.0dip"
+                android:layout_gravity="center_horizontal" />
+
             <TextView
-                android:textSize="13sp"
-                android:textColor="#747474"
                 android:id="@+id/tv_brand_introduce"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:lineSpacingExtra="23.0dip" />
+                android:lineSpacingExtra="23.0dip"
+                android:textColor="#747474"
+                android:textSize="13sp" />
+
             <View
 
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="#C6C6C6"/>
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="40dp"
+                android:background="#C6C6C6" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp">
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
                 <TextView
-                    android:textSize="18sp"
-                    android:textColor="#333333"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="售后/平台介绍" />
+                    android:text="售后/平台介绍"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+
                 <View
                     android:layout_width="0.5dp"
                     android:layout_height="17.0dip"
-                    android:layout_marginLeft="5.0dip"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5.0dip"
                     android:layout_marginRight="5.0dip"
                     android:background="#C6C6C6" />
 
                 <TextView
-                    android:textSize="15dp"
-                    android:textColor="#C0C0C0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="After sale and platform" />
+                    android:text="After sale and platform"
+                    android:textColor="#C0C0C0"
+                    android:textSize="15dp" />
 
             </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginRight="20dp">
-                    <TextView
-                        android:textSize="13sp"
-                        android:textColor="#747474"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="在小象优品购物" />
-                    <TextView
-                        android:textSize="13sp"
-                        android:textColor="#747474"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="23.0dip"
-                        android:text="小象在时尚社区,国际品牌的海量商品中,优选出全国最热门的好物。对商家进行过严格的授权资格考核，将采购的正品优质商品第一时间送到您的手上。"
-                        android:lineSpacingExtra="23.0dip" />
-                    <TextView
-                        android:textSize="13sp"
-                        android:textColor="#747474"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="40dp"
-                        android:text="优品发货" />
-                    <TextView
-                        android:textSize="13sp"
-                        android:textColor="#747474"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="23.0dip"
-                        android:text="小象优品在收到您的订单后，将在第一时间给您备货发货。所有商品由品牌的唯一线上旗舰店负责发货和售后。" android:lineSpacingExtra="23.0dip" />
 
-                </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/linrea_hint_open"
-                android:visibility="gone"
-                android:orientation="vertical"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
 
-                >
                 <TextView
-                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="在小象优品购物"
                     android:textColor="#747474"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23.0dip"
+                    android:lineSpacingExtra="23.0dip"
+                    android:text="小象在时尚社区,国际品牌的海量商品中,优选出全国最热门的好物。对商家进行过严格的授权资格考核，将采购的正品优质商品第一时间送到您的手上。"
+                    android:textColor="#747474"
+                    android:textSize="13sp" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:text="关于售后" />
-                <TextView
-                    android:textSize="13sp"
+                    android:text="优品发货"
                     android:textColor="#747474"
+                    android:textSize="13sp" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="23.0dip"
-                    android:text="小象优品的订单接受7天无理由退换货，在不影响二次销售的情况下，可直接申请退换货服务，也可以联系小象帮您处理。"
-                    android:lineSpacingExtra="23.0dip" />
-                <TextView
-                    android:textSize="@dimen/tsize_13"
-                    android:textColor="@color/line"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_40"
-                    android:text="联系小象" />
-                <TextView
-                    android:textSize="@dimen/tsize_13"
-                    android:textColor="@color/line"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="23.0dip"
-                    android:text="如有关于订单的疑问，可以在售后中心，直接戳小象留言，我们会尽快处理。"
-                    android:lineSpacingExtra="23.0dip" />
-                <TextView
-                    android:textSize="@dimen/tsize_13"
-                    android:textColor="@color/line"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_40"
-                    android:text="消费者告知书" />
-                <TextView
-                    android:textSize="@dimen/tsize_13"
-                    android:textColor="@color/line"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_40"
-                    android:text="尊敬的客户：" />
-                <TextView
-                    android:textSize="@dimen/tsize_13"
-                    android:textColor="@color/line"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="23.0dip"
-                    android:text="在您选购小象优品的商品前，请仔细阅读此文，同意本文告知内容后再进行下单购买："
-                    android:lineSpacingExtra="23.0dip" />
-                <TextView
-                    android:textSize="@dimen/tsize_13"
-                    android:textColor="@color/line"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="23.0dip"
-                    android:text="1、您在本（公司）App里购买的优选商品为小象代购商品，由品牌唯一指定的旗舰店负责发货和售后服务，您在购物中遇到任何问题，都可以联系小象。"
-                    android:lineSpacingExtra="23.0dip" />
-                <TextView
-                    android:textSize="@dimen/tsize_13"
-                    android:textColor="@color/line"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="23.0dip"
-                    android:text="2、您在本（公司）App里购买的优选商品，均可以申请分期服务。"
-                    android:lineSpacingExtra="23.0dip" />
-                <TextView
-                    android:textSize="@dimen/tsize_13"
-                    android:textColor="@color/line"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="23.0dip"
-                    android:text="3、小象优品拥有所有优惠活动的最终解释权。"
-                    android:lineSpacingExtra="23.0dip" />
+                    android:lineSpacingExtra="23.0dip"
+                    android:text="小象优品在收到您的订单后，将在第一时间给您备货发货。所有商品由品牌的唯一线上旗舰店负责发货和售后。"
+                    android:textColor="#747474"
+                    android:textSize="13sp" />
+
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linrea_hint_open"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="关于售后"
+                    android:textColor="#747474"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23.0dip"
+                    android:lineSpacingExtra="23.0dip"
+                    android:text="小象优品的订单接受7天无理由退换货，在不影响二次销售的情况下，可直接申请退换货服务，也可以联系小象帮您处理。"
+                    android:textColor="#747474"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:text="联系小象"
+                    android:textColor="@color/line"
+                    android:textSize="@dimen/tsize_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23.0dip"
+                    android:lineSpacingExtra="23.0dip"
+                    android:text="如有关于订单的疑问，可以在售后中心，直接戳小象留言，我们会尽快处理。"
+                    android:textColor="@color/line"
+                    android:textSize="@dimen/tsize_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:text="消费者告知书"
+                    android:textColor="@color/line"
+                    android:textSize="@dimen/tsize_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:text="尊敬的客户："
+                    android:textColor="@color/line"
+                    android:textSize="@dimen/tsize_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23.0dip"
+                    android:lineSpacingExtra="23.0dip"
+                    android:text="在您选购小象优品的商品前，请仔细阅读此文，同意本文告知内容后再进行下单购买："
+                    android:textColor="@color/line"
+                    android:textSize="@dimen/tsize_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23.0dip"
+                    android:lineSpacingExtra="23.0dip"
+                    android:text="1、您在本（公司）App里购买的优选商品为小象代购商品，由品牌唯一指定的旗舰店负责发货和售后服务，您在购物中遇到任何问题，都可以联系小象。"
+                    android:textColor="@color/line"
+                    android:textSize="@dimen/tsize_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23.0dip"
+                    android:lineSpacingExtra="23.0dip"
+                    android:text="2、您在本（公司）App里购买的优选商品，均可以申请分期服务。"
+                    android:textColor="@color/line"
+                    android:textSize="@dimen/tsize_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23.0dip"
+                    android:lineSpacingExtra="23.0dip"
+                    android:text="3、小象优品拥有所有优惠活动的最终解释权。"
+                    android:textColor="@color/line"
+                    android:textSize="@dimen/tsize_13" />
+            </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_40"
-                android:layout_marginRight="@dimen/margin_20">
+                android:layout_marginRight="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_40">
+
                 <TextView
-                    android:textSize="12sp"
-                    android:textColor="#5006FB"
                     android:id="@+id/supeegoods_open_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="查看介绍详情"
-                    android:drawableRight="@mipmap/more_down"
+                    android:layout_alignParentRight="true"
                     android:drawablePadding="5.0dip"
-                    android:layout_alignParentRight="true" />
+                    android:drawableRight="@mipmap/more_down"
+                    android:text="查看介绍详情"
+                    android:textColor="#5006FB"
+                    android:textSize="12sp" />
             </RelativeLayout>
+
             <View
-                android:layout_marginLeft="@dimen/margin_20"
-                android:layout_marginTop="@dimen/margin_40"
-                android:layout_marginRight="@dimen/margin_20"
-                android:layout_marginBottom="@dimen/margin_40"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="#C6C6C6"/>
+                android:layout_marginBottom="@dimen/margin_40"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginRight="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_40"
+                android:background="#C6C6C6" />
 
 
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout android:orientation="vertical"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
         <View
 
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="#C6C6C6"/>
+            android:background="#C6C6C6" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
-            <FrameLayout android:background="#ff3b3b3b"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/super_cart"
                 android:layout_width="0.0dip"
                 android:layout_height="match_parent"
-                android:layout_weight="2.0">
+                android:layout_weight="2.0"
+                android:background="#ff3b3b3b">
+
                 <TextView
-                    android:textSize="13sp"
-                    android:textColor="#ffffff"
-                    android:gravity="center"
-                    android:layout_gravity="center"
                     android:id="@+id/goods_cart"
-                    android:paddingTop="3.0dip"
-                    android:paddingBottom="3.0dip"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableTop="@mipmap/tool_icon_shopping_nol"
+                    android:gravity="center"
+                    android:paddingBottom="3.0dip"
+                    android:paddingTop="3.0dip"
                     android:text="购物车"
-                    android:drawableTop="@mipmap/tool_icon_shopping_nol" />
+                    android:textColor="#ffffff"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/backtwo_count"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/circle"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="#fff" />
             </FrameLayout>
-            <Button android:textSize="18.0sp"
-                android:textColor="#ffffff"
+
+            <Button
                 android:id="@+id/btn_add"
-                android:background="#ffffb074"
                 android:layout_width="0.0dip"
                 android:layout_height="match_parent"
+                android:layout_weight="3.0"
+                android:background="#ffffb074"
                 android:text="加入购物车"
-                android:layout_weight="3.0" />
+                android:textColor="#ffffff"
+                android:textSize="18.0sp" />
+
             <Button
 
-                android:textSize="18.0sp"
-                android:textColor="#ffffff"
                 android:id="@+id/btn_immediately_buy"
-                android:background="#fff54b78"
                 android:layout_width="0.0dip"
                 android:layout_height="match_parent"
+                android:layout_weight="3.0"
+                android:background="#fff54b78"
                 android:text="立即购买"
-                android:layout_weight="3.0" />
+                android:textColor="#ffffff"
+                android:textSize="18.0sp" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

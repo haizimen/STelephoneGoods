@@ -1,6 +1,7 @@
 package com.phone1000.stelephonegoods.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.phone1000.stelephonegoods.R;
+import com.phone1000.stelephonegoods.activities.SuperBacKTwoActivity;
 import com.phone1000.stelephonegoods.model.HandpickModel;
 import com.squareup.picasso.Picasso;
 
@@ -18,9 +20,11 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/11/28.
  */
-public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
+public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> implements View.OnClickListener {
     private LayoutInflater inflater;
     private List<HandpickModel.BodyBean.GoodGroupsBean.SlideGoodsBean> data;
+    private Context context;
+    private RecyclerView recyclerView;
 
     public MyRecyclerAdapter(Context context, List<HandpickModel.BodyBean.GoodGroupsBean.SlideGoodsBean> data) {
         inflater = LayoutInflater.from(context);
@@ -29,11 +33,13 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         } else {
             this.data = new ArrayList<>();
         }
+        this.context = context;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View inflate = inflater.inflate(R.layout.handpick_linear, parent, false);
+        inflate.setOnClickListener(this);
         return new ViewHolder(inflate);
     }
 
@@ -59,6 +65,14 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         return data == null ? 0 : data.size();
     }
 
+    @Override
+    public void onClick(View v) {
+        int position = recyclerView.getChildLayoutPosition(v);
+        Intent intent = new Intent(context, SuperBacKTwoActivity.class);
+        intent.putExtra("goodcode", data.get(position).getGoodsCode());
+        context.startActivity(intent);
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView img;
         public TextView title, price, pay;
@@ -70,5 +84,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
             price = (TextView) itemView.findViewById(R.id.linear_price);
             pay = (TextView) itemView.findViewById(R.id.pay);
         }
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        this.recyclerView = recyclerView;
     }
 }
