@@ -73,6 +73,8 @@ public class FragmentReadBook extends Fragment implements AdapterView.OnItemClic
          List<ReadListContent>lists=   new Gson().fromJson(data.toString(),type);
             for (int i = 0; i < lists.size(); i++) {
                 if (i%3==0) {
+                    lists.get(i).setType(0);
+                }else{
                     lists.get(i).setType(1);
                 }
             }
@@ -92,6 +94,7 @@ public class FragmentReadBook extends Fragment implements AdapterView.OnItemClic
         refreshLayout = (SwipeRefreshLayout) layout.findViewById(R.id.fragment_read_refresh);
         adapter = new ReadListAdapter(getContext(),null, R.layout.fragment_read_layout_zero,R.layout.fragment_read_layout_one);
         mListView.setAdapter(adapter);
+        mListView.setDividerHeight(0);
         refreshLayout.setOnRefreshListener(this);
         refreshLayout.setColorSchemeResources(R.color.colorAccent);
         mListView.setOnItemClickListener(this);

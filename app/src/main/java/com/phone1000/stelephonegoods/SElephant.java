@@ -1,7 +1,7 @@
 package com.phone1000.stelephonegoods;
 
 import android.app.Application;
-mport android.os.Environment;
+import android.os.Environment;
 
 import com.zhy.http.okhttp.OkHttpUtils;
 
@@ -16,6 +16,7 @@ import okhttp3.OkHttpClient;
  */
 public class SElephant extends Application {
     public static boolean isLogin = false;
+    public static boolean isCertigition = false;
     public static DbManager.DaoConfig daoConfig = new DbManager.DaoConfig()
             .setDbName("address.db")
             .setDbDir(Environment.getExternalStorageDirectory());

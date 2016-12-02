@@ -21,6 +21,7 @@
             android:drawableLeft="@mipmap/phone"
             android:hint="   手机号码"
             android:maxLength="11"
+            android:text="11111111"
             android:paddingLeft="10dp" />
 
         <Button
@@ -53,6 +54,7 @@
             android:layout_marginTop="5dp"
             android:id="@+id/login_phonefast_edittext_identifycode"
             android:layout_width="0dp"
+            android:text="12345"
 
             android:layout_height="match_parent"
             android:layout_weight="5"

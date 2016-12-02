@@ -71,5 +71,7 @@ public class ReadUrl {
     public static final String CASH_USED_INTRODUCE_URL="http://cdn.xiaoxiangyoupin.com/app/service/coupon-xj.html";
     public static final String FREE_USED_INTRODUCE_URL="http://cdn.xiaoxiangyoupin.com/app/service/coupon-fq.html";
     public static final String LOCATION_URL="http://api.xiaoxiangyoupin.com/v2/order/address/getByCode.json";
+    public static final String XIAOXIANG_PROTOCOL_URL="http://cdn.xiaoxiangyoupin.com/app/service/userproto.html";
+    public static final String MINE_URL="http://api.xiaoxiangyoupin.com/v2/assets/userCredit/getUserCredit.json?token=bb56ab6948c668fd7a48d83f110efa9b";
 
 }

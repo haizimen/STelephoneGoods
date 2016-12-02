@@ -3,259 +3,375 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-<ScrollView
-    android:layout_width="match_parent"
-    android:scrollbars="none"
-    android:layout_height="wrap_content">
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp">
+        android:scrollbars="none">
 
-            <ImageView
-                android:id="@+id/mine_imageview_image"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:scaleType="fitXY"
-                android:layout_height="match_parent"
-                android:src="@mipmap/minehead" />
+                android:layout_height="200dp">
 
-            <TextView
-                android:id="@+id/mine_textview_upgrade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginRight="10dp"
+                <ImageView
+                    android:id="@+id/mine_imageview_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/minehead" />
+
+                <TextView
+                    android:id="@+id/mine_textview_upgrade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="立即提额"
+                    android:textColor="#ffc61c" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:text="信用额度  ￥0.00" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:text="七天待还额度  ￥0.00" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
                 android:layout_marginTop="10dp"
-                android:text="立即提额"
-                android:textColor="#ffc61c" />
-        </FrameLayout>
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="1dp"
-            android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#fff"
-                android:gravity="center"
-                android:text="信用额度  ￥0.00" />
+                    <TextView
+                        android:id="@+id/mine_textview_mineorder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:drawableTop="@mipmap/personal_center_list_icon1"
+                        android:gravity="center"
+                        android:text="我的订单" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="1dp"
-                android:layout_weight="1"
-                android:background="#fff"
-                android:gravity="center"
-                android:text="七天待还额度  ￥0.00" />
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/mine_textview_mineorder_number"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circle"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="#fff"
+                        android:visibility="gone" />
+                </FrameLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/mine_textview_mineorder"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="我的订单"
-                android:background="#fff"
-                android:drawableTop="@mipmap/personal_center_list_icon1"/>
-            <TextView
-                android:id="@+id/mine_textview_waitpay"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="待付款"
-                android:background="#fff"
-                android:drawableTop="@mipmap/personal_center_list_icon2"/>
-            <TextView
-                android:id="@+id/mine_textview_waitgoods"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="待收货"
-                android:background="#fff"
-                android:drawableTop="@mipmap/personal_center_list_icon3"/>
-            <TextView
-                android:id="@+id/mine_textview_cash"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="现金券"
-                android:background="#fff"
-                android:drawableTop="@mipmap/personal_center_list_icon4"/>
-            <TextView
-                android:id="@+id/mine_textview_free"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="免息券"
-                android:background="#fff"
-                android:drawableTop="@mipmap/personal_center_list_icon5"/>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/mine_textview_waitpay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:drawableTop="@mipmap/personal_center_list_icon1"
+                        android:gravity="center"
+                        android:text="代付款" />
+
+                    <TextView
+                        android:id="@+id/mine_textview_waitpay_number"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circle"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="#fff"
+                        android:visibility="gone" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/mine_textview_waitgoods"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:drawableTop="@mipmap/personal_center_list_icon1"
+                        android:gravity="center"
+                        android:text="待收货" />
+
+                    <TextView
+                        android:id="@+id/mine_textview_waitgoods_number"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circle"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="#fff"
+                        android:visibility="gone" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/mine_textview_cash"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:drawableTop="@mipmap/personal_center_list_icon1"
+                        android:gravity="center"
+                        android:text="现金券" />
+
+                    <TextView
+                        android:id="@+id/mine_textview_cash_number"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circle"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="#fff"
+                        android:visibility="gone" />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/mine_textview_free"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:drawableTop="@mipmap/personal_center_list_icon1"
+                        android:gravity="center"
+                        android:text="免息券" />
+
+                    <TextView
+                        android:id="@+id/mine_textview_free_number"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circle"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="#fff"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mine_ll_minepay"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/personal_center_list_icon6"
+                    android:gravity="center_vertical"
+                    android:text="  我的账单"
+                    android:textColor="#333" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mine_ll_cashupdate"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/personal_center_list_icon12"
+                    android:gravity="center_vertical"
+                    android:text="  额度提升"
+                    android:textColor="#333" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mine_ll_account"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/personal_center_list_icon7"
+                    android:gravity="center_vertical"
+                    android:text="  账户管理"
+                    android:textColor="#333" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mine_ll_reciveraddress"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/personal_center_list_icon8"
+                    android:gravity="center_vertical"
+                    android:text="  收货地址"
+                    android:textColor="#333" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mine_ll_contact"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/personal_center_list_icon9"
+                    android:gravity="center_vertical"
+                    android:text="  联系客服"
+                    android:textColor="#333" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mine_ll_commonproblem"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/personal_center_list_icon11"
+                    android:gravity="center_vertical"
+                    android:text="  常见问题"
+                    android:textColor="#333" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mine_ll_settings"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/personal_center_list_icon10"
+                    android:gravity="center_vertical"
+                    android:text="  设置"
+                    android:textColor="#333" />
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray" />
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:id="@+id/mine_ll_minepay"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="  我的账单"
-                android:background="#fff"
-                android:textColor="#333"
-                android:drawableLeft="@mipmap/personal_center_list_icon6"
-                android:gravity="center_vertical"/>
-            <TextView
-                android:layout_width="40dp"
-                android:background="#fff"
-                android:layout_height="match_parent"
-                android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/mine_ll_cashupdate"
-            android:layout_marginTop="1dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="  额度提升"
-                android:background="#fff"
-                android:textColor="#333"
-                android:drawableLeft="@mipmap/personal_center_list_icon12"
-                android:gravity="center_vertical"/>
-            <TextView
-                android:background="#fff"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/mine_ll_account"
-            android:layout_marginTop="1dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:background="#fff"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="  账户管理"
-                android:textColor="#333"
-                android:drawableLeft="@mipmap/personal_center_list_icon7"
-                android:gravity="center_vertical"/>
-            <TextView
-                android:background="#fff"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/mine_ll_reciveraddress"
-            android:layout_marginTop="1dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:background="#fff"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="  收货地址"
-                android:textColor="#333"
-                android:drawableLeft="@mipmap/personal_center_list_icon8"
-                android:gravity="center_vertical"/>
-            <TextView
-                android:background="#fff"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/mine_ll_contact"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:background="#fff"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="  联系客服"
-                android:textColor="#333"
-                android:drawableLeft="@mipmap/personal_center_list_icon9"
-                android:gravity="center_vertical"/>
-            <TextView
-                android:background="#fff"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/mine_ll_commonproblem"
-            android:layout_marginTop="1dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:background="#fff"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="  常见问题"
-                android:textColor="#333"
-                android:drawableLeft="@mipmap/personal_center_list_icon11"
-                android:gravity="center_vertical"/>
-            <TextView
-                android:background="#fff"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/mine_ll_settings"
-            android:layout_marginTop="1dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:background="#fff"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="  设置"
-                android:textColor="#333"
-                android:drawableLeft="@mipmap/personal_center_list_icon10"
-                android:gravity="center_vertical"/>
-            <TextView
-                android:background="#fff"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:drawableLeft="@mipmap/list_disclosure_ndicator_nol_gray"/>
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 
 </LinearLayout>

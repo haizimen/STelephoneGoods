@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.phone1000.stelephonegoods.R;
+import com.phone1000.stelephonegoods.SElephant;
 
 public class CertificationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -100,7 +101,6 @@ public class CertificationActivity extends AppCompatActivity implements View.OnC
                 String section = ContactsContract.CommonDataKinds.Phone.CONTACT_ID + "=" + contactId;
                 ContentResolver contentResolver1 = getContentResolver();
                 Cursor phone = contentResolver1.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, section, null, null);
-                cursor.moveToFirst();
                 Log.e(TAG, "onActivityResult: " + phone);
                 while (phone.moveToNext()) {
                     phoneNumber = phone.getString(phone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
@@ -170,17 +170,17 @@ public class CertificationActivity extends AppCompatActivity implements View.OnC
                 }
                 if(TextUtils.equals(identifyCode,"123456")){
                     Toast.makeText(CertificationActivity.this, "认证成功", Toast.LENGTH_SHORT).show();
-                    CashUpdateActivity.isCertigition=true;
+                    SElephant.isCertigition=true;
                     new AlertDialog.Builder(this)
                             .setMessage("是否立即提额")
                             .setPositiveButton("是", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Intent intent2 = new Intent(CertificationActivity.this, CashUpdateActivity.class);
-                            intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent2);
-                        }
-                    })
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent2 = new Intent(CertificationActivity.this, CashUpdateActivity.class);
+                                    intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent2);
+                                }
+                            })
                             .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

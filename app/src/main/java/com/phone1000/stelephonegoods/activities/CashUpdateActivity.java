@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.phone1000.stelephonegoods.R;
+import com.phone1000.stelephonegoods.SElephant;
 import com.phone1000.stelephonegoods.adapters.CashUpdatePagerAdapter;
 
 import java.util.ArrayList;
@@ -26,7 +27,6 @@ public class CashUpdateActivity extends AppCompatActivity implements View.OnClic
     private ViewPager mViewPager;
     private ImageView mImageBack;
     private LayoutInflater inflater;
-    public static boolean isCertigition=false;
     private TabLayout mTabLayout;
     private int currentPositon=0;
     private String TAG=CashUpdateActivity.class.getSimpleName();
@@ -62,7 +62,8 @@ public class CashUpdateActivity extends AppCompatActivity implements View.OnClic
         btnFive.setOnClickListener(this);
         btnSix.setOnClickListener(this);
         mImageBack.setOnClickListener(this);
-        if (!isCertigition) {
+        if (!SElephant.isCertigition) {
+            btnOne.setText("立即认证");
             btnOne.setEnabled(true);
             btnTwo.setEnabled(false);
             btnThree.setEnabled(false);
@@ -71,6 +72,7 @@ public class CashUpdateActivity extends AppCompatActivity implements View.OnClic
             btnSix.setEnabled(false);
 
         }else{
+            btnOne.setText("已认证");
             btnOne.setEnabled(false);
             btnTwo.setEnabled(true);
             btnThree.setEnabled(true);
@@ -96,31 +98,47 @@ public class CashUpdateActivity extends AppCompatActivity implements View.OnClic
             }
             mTabLayout.addTab(tab);
         }
-         mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
     }
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.cash_update_item_one_btn:
                 Intent intent = new Intent(this, CertificationActivity.class);
                 startActivity(intent);
                 break;
             case R.id.cash_update_item_two_btn:
+                TextView textView = (TextView) v;
                 Toast.makeText(CashUpdateActivity.this, "授权成功", Toast.LENGTH_SHORT).show();
+                textView.setText("已授权");
+                textView.setEnabled(false);
                 break;
             case R.id.cash_update_item_three_btn:
+                TextView textView1 = (TextView) v;
                 Toast.makeText(CashUpdateActivity.this, "授权成功", Toast.LENGTH_SHORT).show();
+                textView1.setText("已授权");
+                textView1.setEnabled(false);
                 break;
             case R.id.cash_update_item_four_btn:
+                TextView textView2 = (TextView) v;
                 Toast.makeText(CashUpdateActivity.this, "授权成功", Toast.LENGTH_SHORT).show();
+                textView2.setText("已授权");
+                textView2.setEnabled(false);
                 break;
             case R.id.cash_update_item_five_btn:
+                TextView textView3 = (TextView) v;
                 Toast.makeText(CashUpdateActivity.this, "授权成功", Toast.LENGTH_SHORT).show();
+                textView3.setText("已授权");
+                textView3.setEnabled(false);
                 break;
             case R.id.cash_update_item_six_btn:
+                TextView textView4 = (TextView) v;
                 Toast.makeText(CashUpdateActivity.this, "授权成功", Toast.LENGTH_SHORT).show();
+                textView4.setText("已授权");
+                textView4.setEnabled(false);
                 break;
             case R.id.cashupdate_back:
                 finish();
