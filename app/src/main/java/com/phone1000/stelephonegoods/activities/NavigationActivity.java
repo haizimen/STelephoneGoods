@@ -4,17 +4,16 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.gson.Gson;
 import com.phone1000.stelephonegoods.R;
 import com.phone1000.stelephonegoods.adapters.RecyclerGridAdapter;
+import com.phone1000.stelephonegoods.constant.HttpParams;
 import com.phone1000.stelephonegoods.constant.ReadUrl;
 import com.phone1000.stelephonegoods.model.NavigationModel;
 import com.squareup.picasso.Picasso;
@@ -59,6 +58,7 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
     private void setupView() {
         OkHttpUtils.get()
                 .url(ReadUrl.HANDPICKNAVIGATIONURL + id + ReadUrl.NONEURL)
+                .addHeader(HttpParams.CACHE_CONTROL,"only-if-cache,max-stale" + 60 * 60 * 60)
                 .build()
                 .execute(new StringCallback() {
                     @Override

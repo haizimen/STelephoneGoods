@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.phone1000.stelephonegoods.BaseFragment;
 import com.phone1000.stelephonegoods.R;
 import com.phone1000.stelephonegoods.adapters.HandPickListAdapter;
+import com.phone1000.stelephonegoods.constant.HttpParams;
 import com.phone1000.stelephonegoods.constant.ReadUrl;
 import com.phone1000.stelephonegoods.model.HandpickModel;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -51,6 +52,7 @@ public class House extends BaseFragment implements SwipeRefreshLayout.OnRefreshL
                 .url(ReadUrl.HANDPICKURL)
                 .addParams("titleId", "10")
                 .addParams("isHome", "0")
+                .addHeader(HttpParams.CACHE_CONTROL,"only-if-cache,max-stale" + 5 * 60 * 60)
                 .build()
                 .execute(new StringCallback() {
                     @Override

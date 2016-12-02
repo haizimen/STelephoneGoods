@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,10 +31,6 @@ import com.phone1000.stelephonegoods.model.OtherEvent;
 
 import org.w3c.dom.Text;
 
-import de.greenrobot.event.EventBus;
-import de.greenrobot.event.Subscribe;
-import de.greenrobot.event.ThreadMode;
-
 /**
  * Created by my on 2016/11/28.
  */
@@ -47,7 +42,7 @@ public class FragmentMine extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (!SElephant.isLogin) {
+        if (false) {
             Intent intent = new Intent(getContext(), LoginActivity.class);
             startActivity(intent);
         }
@@ -63,11 +58,11 @@ public class FragmentMine extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if (!SElephant.isLogin) {
+        if (false) {
             RadioButton viewById = (RadioButton) getActivity().findViewById(R.id.main_rg_rb_homepage);
             viewById.setChecked(true);
         }
-      initView();
+       initView();
     }
 
     private void initView() {
@@ -172,7 +167,6 @@ public class FragmentMine extends Fragment implements View.OnClickListener {
         }
 
     }
-
     @Override
     public void onDestroy() {
         super.onDestroy();

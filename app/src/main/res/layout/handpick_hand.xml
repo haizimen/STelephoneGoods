@@ -7,7 +7,8 @@
     <com.phone1000.stelephonegoods.custormView.CustormViewPager
         android:id="@+id/handpick_pager"
         android:layout_width="match_parent"
-        android:layout_height="260dp"></com.phone1000.stelephonegoods.custormView.CustormViewPager>
+        android:layout_height="260dp"
+        ></com.phone1000.stelephonegoods.custormView.CustormViewPager>
 
     <LinearLayout
         android:id="@+id/handpick_point"

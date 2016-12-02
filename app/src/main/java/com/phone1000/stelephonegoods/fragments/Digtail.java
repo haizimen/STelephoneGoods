@@ -2,7 +2,6 @@ package com.phone1000.stelephonegoods.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +13,7 @@ import com.google.gson.Gson;
 import com.phone1000.stelephonegoods.BaseFragment;
 import com.phone1000.stelephonegoods.R;
 import com.phone1000.stelephonegoods.adapters.HandPickListAdapter;
+import com.phone1000.stelephonegoods.constant.HttpParams;
 import com.phone1000.stelephonegoods.constant.ReadUrl;
 import com.phone1000.stelephonegoods.model.HandpickModel;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -52,6 +52,7 @@ public class Digtail extends BaseFragment implements SwipeRefreshLayout.OnRefres
                 .url(ReadUrl.HANDPICKURL)
                 .addParams("titleId", "2")
                 .addParams("isHome", "0")
+                .addHeader(HttpParams.CACHE_CONTROL,"only-if-cache,max-stale" + 5 * 60 * 60)
                 .build()
                 .execute(new StringCallback() {
                     @Override

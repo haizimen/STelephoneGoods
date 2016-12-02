@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="40dp">
+    <TextView
+        android:id="@+id/super_diandiandian"
+        android:textSize="25sp"
+        android:textColor="#747474"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="."
+        android:layout_alignBaseline="@+id/super_title_left"
+        android:layout_gravity="center_vertical"
+
+        />
+    <TextView
+        android:id="@+id/super_title_left"
+        android:textSize="13sp"
+        android:textColor="#747474"
+        android:layout_toRightOf="@+id/super_diandiandian"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:text="品牌" />
+    <TextView
+        android:id="@+id/supe_title_maohao"
+        android:textSize="13sp"
+        android:textColor="#747474"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/super_title_left"
+        android:layout_height="wrap_content"
+        android:text=": " />
+    <TextView
+        android:id="@+id/super_title_right"
+        android:textSize="13sp"
+        android:textColor="#747474"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/supe_title_maohao"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="vivo"/>
+</RelativeLayout>

@@ -1,7 +1,7 @@
 package com.phone1000.stelephonegoods;
 
 import android.app.Application;
-import android.os.Environment;
+mport android.os.Environment;
 
 import com.zhy.http.okhttp.OkHttpUtils;
 
@@ -15,11 +15,11 @@ import okhttp3.OkHttpClient;
  * Created by my on 2016/11/28.
  */
 public class SElephant extends Application {
-
     public static boolean isLogin = false;
     public static DbManager.DaoConfig daoConfig = new DbManager.DaoConfig()
             .setDbName("address.db")
             .setDbDir(Environment.getExternalStorageDirectory());
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -27,5 +27,6 @@ public class SElephant extends Application {
         x.Ext.setDebug(true);
         OkHttpClient okHttpClient = new OkHttpClient();
         OkHttpUtils.initClient(okHttpClient);
+
     }
 }

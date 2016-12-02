@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:text="超级返"/>
+    android:background="#FF8040">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#ffffff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="超级返利"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF8040"
+        >
+
+            <GridView
+                android:layout_marginTop="10dp"
+                android:id="@+id/superback_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="2"
+                android:verticalSpacing="20dp"
+                android:horizontalSpacing="20dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:scrollbars="none"
+                />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+
 </LinearLayout>
