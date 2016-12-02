@@ -1,10 +1,14 @@
 package com.phone1000.stelephonegoods.model;
 
+import org.xutils.db.annotation.Column;
+import org.xutils.db.annotation.Table;
+
 import java.util.List;
 
 /**
  * Created by Administrator on 2016/11/29.
  */
+
 public class SupertwoModel {
 
     /**
@@ -46,6 +50,7 @@ public class SupertwoModel {
             this.good = good;
         }
 
+        @Table(name = "GoodBean")
         public static class GoodBean {
             /**
              * remark :
@@ -73,8 +78,11 @@ public class SupertwoModel {
              */
 
             private String remark;
+            @Column(name = "goodsCode", isId = true, autoGen = false)
             private String goodsCode;
+            @Column(name = "peroidInstalmentAmount")
             private int peroidInstalmentAmount;
+            @Column(name = "promotionPrice")
             private int promotionPrice;
             private CategoryTowBean categoryTow;
             private String goodsSourceStoreName;
@@ -86,11 +94,13 @@ public class SupertwoModel {
             private int repertory;
             private String instalmentInfo;
             private String sourcePlatformPicurl;
+            @Column(name = "thumbnailUrl")
             private String thumbnailUrl;
             private int directPaymentAmount;
             private BrandBean brand;
             private long putawayTime;
             private int superRebateAmount;
+            @Column(name = "goodsName")
             private String goodsName;
             private List<PropertyValuesBean> propertyValues;
             private List<ImagesBean> images;

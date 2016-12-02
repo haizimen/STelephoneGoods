@@ -8,6 +8,7 @@ import com.phone1000.stelephonegoods.utils.NetWorkUtil;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import org.apache.http.params.HttpParams;
+import org.xutils.DbManager;
 import org.xutils.x;
 
 import java.io.IOException;
@@ -64,5 +65,6 @@ public class SElephant extends Application {
                 .addNetworkInterceptor(interceptor)
                 .build();
         OkHttpUtils.initClient(client);
+
     }
 }
